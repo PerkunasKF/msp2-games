@@ -1,6 +1,7 @@
 var cicle = 0;
 var cicleMemmory = [];
 var lastBlink = 0;
+var buttonValue = 0;
 
 //  The beginging of the game
 //  Generates random numbers to choose a button and calculates cicles.
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             colorBtn.disabled = true;
         });
         cicle++;
-        let num = Math.floor(Math.random() * 4) + 1;
+        let num = 1; //Math.floor(Math.random() * 4) + 1;
         cicleMemmory.push(num);
 
         //console.log('Ciklo numeris - ' + cicle);
@@ -69,10 +70,8 @@ function colorBlink(num) {
         //console.log('Ciklas - ' + cicle);
         //console.log('Paskutinis bliksnis - ' + lastBlink);
         if (cicle == lastBlink) {
-            document.querySelectorAll('.color-btn').forEach(colorBtn => {
-                colorBtn.disabled = false;
-            });
             lastBlink = 0;
+            colorChange();
         } else {
             document.getElementById('start-button').style.backgroundColor = '';
         }
@@ -82,33 +81,62 @@ function colorBlink(num) {
 // Function to change color for buttons on click
 
 function colorChange() {
+    document.querySelectorAll('.color-btn').forEach(colorBtn => {
+        colorBtn.disabled = false;
+    });
+
     let colorBtn = document.getElementsByClassName('color-btn');
+
     let redBtn = colorBtn[0];
-    redBtn.addEventListener('click', function(){
+    redBtn.addEventListener('click', function () {
+        buttonValue = 1;
         redBtn.style.backgroundColor = 'red';
-        setTimeout(function(){
+        colorPattern(buttonValue);
+        setTimeout(function () {
             redBtn.style.backgroundColor = '';
         }, 150);
     });
     let blueBtn = colorBtn[1];
-    blueBtn.addEventListener('click', function(){
+    blueBtn.addEventListener('click', function () {
+        buttonValue = 2;
         blueBtn.style.backgroundColor = 'blue';
-        setTimeout(function(){
+        setTimeout(function () {
             blueBtn.style.backgroundColor = '';
         }, 150);
     });
     let greenBtn = colorBtn[2];
-    greenBtn.addEventListener('click', function(){
+    greenBtn.addEventListener('click', function () {
+        buttonValue = 3;
         greenBtn.style.backgroundColor = 'green';
-        setTimeout(function(){
+        setTimeout(function () {
             greenBtn.style.backgroundColor = '';
         }, 150);
     });
     let yellowBtn = colorBtn[3];
-    yellowBtn.addEventListener('click', function(){
+    yellowBtn.addEventListener('click', function () {
+        buttonValue = 4;
         yellowBtn.style.backgroundColor = 'yellow';
-        setTimeout(function(){
+        setTimeout(function () {
             yellowBtn.style.backgroundColor = '';
         }, 150);
     });
+}
+
+function colorPattern(buttonValue) {
+    let i = cicleMemmory;
+
+
+    if (i[0] == buttonValue) {
+        console.log(i);
+        i.shift();
+        console.log(i);
+        console.log('Teisingai');
+        colorChange()
+        console.log(cicleMemmory);
+    } else {
+        document.querySelectorAll('.color-btn').forEach(colorBtn => {
+            colorBtn.disabled = true;
+        });
+        console.log('Neteisigai');
+    }
 }
