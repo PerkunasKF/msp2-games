@@ -17,41 +17,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//  Function to send random number to the colorBlink function so the needed button blinks right color
+//  This code frame was coppyed from stackOwerflow, code by Cooper Buckingham
+//  2021-07-29
+//  [https://stackoverflow.com/questions/29883259/how-do-you-slow-down-the-execution-of-a-for-loop-in-javascript]
+
 function startGame(cicleMemmory) {
     for (var i = 0; i < cicleMemmory.length; i++) {
         let num = cicleMemmory[i];
         setTimeout(function () {
             colorBlink(num);
-            //console.log(cicleMemmory[i]);
-        }, 500 * i);
+        }, 1000 * i);
     }
-
 }
 
 function colorBlink(num) {
     if (num == 1) {
         document.getElementById('red-button').style.backgroundColor = 'red';
-        setTimeout(function () {
-            document.getElementById('red-button').style.backgroundColor = '';
-        }, 500);
     }
     if (num == 2) {
         document.getElementById('blue-button').style.backgroundColor = 'blue';
-        setTimeout(function () {
-            document.getElementById('blue-button').style.backgroundColor = '';
-        }, 500);
     }
     if (num == 3) {
         document.getElementById('green-button').style.backgroundColor = 'green';
-        setTimeout(function () {
-            document.getElementById('green-button').style.backgroundColor = '';
-        }, 500);
     }
     if (num == 4) {
         document.getElementById('yellow-button').style.backgroundColor = 'yellow';
-        setTimeout(function () {
-            document.getElementById('yellow-button').style.backgroundColor = '';
-        }, 500);
     }
-    console.log(num);
+    setTimeout(function () {
+        let colorBtn = document.getElementsByClassName('color-btn');
+        colorBtn[num - 1].style.backgroundColor = '';
+    }, 500);
 }
