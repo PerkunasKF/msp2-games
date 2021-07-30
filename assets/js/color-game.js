@@ -2,27 +2,25 @@
 // Counts cycles and cycle number pater, check if the start game button is presst.
 
 document.addEventListener('DOMContentLoaded', function () {
+    startGame();
+});
+
+function startGame() {
     let cycle = 0;
-    var cycleMemmory = [];
+    let cycleMemmory = [];
+    cycleMemmory.length = 0;
 
     document.querySelectorAll('.color-btn').forEach(colorBtn => {
         colorBtn.disabled = true;
     });
 
     let startBtn = document.getElementById('start-button');
-    startBtn.addEventListener('click', function () {
+    $('#start-button').off().on('click', function () {
         startBtn.disabled = true;
-
-        let randomNum = Math.floor(Math.random() * 4) + 1;
-        cycleMemmory.push(randomNum);
-        cycle++;
-
-        console.log('------Ciklas------ - ' + cycle);
-        console.log('Ciklos skaiciu eiga - ' + cycleMemmory);
 
         colorBlinkPattern(cycleMemmory, cycle);
     });
-});
+}
 
 //  Function to make color buttons blink baset on colorMemmory number pattern
 //  This code frame was coppyed from stackOwerflow, code by Cooper Buckingham
@@ -30,6 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
 //  [https://stackoverflow.com/questions/29883259/how-do-you-slow-down-the-execution-of-a-for-loop-in-javascript]
 
 function colorBlinkPattern(cycleMemmory, cycle) {
+    let randomNum = Math.floor(Math.random() * 4) + 1;
+    cycleMemmory.push(randomNum);
+    cycle++;
+    console.log('------Ciklas------ - ' + cycle);
+    console.log('Ciklos skaiciu eiga - ' + cycleMemmory);
+
     let blink = 0;
     document.querySelectorAll('.color-btn').forEach(colorBtn => {
         colorBtn.disabled = true;
@@ -58,7 +62,7 @@ function colorBlinkPattern(cycleMemmory, cycle) {
                     document.querySelectorAll('.color-btn').forEach(colorBtn => {
                         colorBtn.disabled = false;
                     });
-                    document.getElementById('start-button').disabled = false;
+                    document.getElementById('start-button').disabled = true;
                     colorClickBlink(cycleMemmory);
                     console.log('---');
                 }
@@ -74,8 +78,6 @@ function colorClickBlink(cycleMemmory) {
     let colorBtn = document.getElementsByClassName('color-btn');
     let buttonValue = 0;
     let valueCheck = [];
-    //valueCheck.length = 0;
-    //console.log(valueCheck);
     let click = 0;
 
     let redBtn = colorBtn[0];
@@ -86,9 +88,8 @@ function colorClickBlink(cycleMemmory) {
         }, 150);
         buttonValue = 1;
         click++;
-        console.log('click');
         valueCheck.push(buttonValue);
-        patternCheck(valueCheck, cycleMemmory);
+        patternCheck(valueCheck, cycleMemmory, click);
     });
 
     let blueBtn = colorBtn[1];
@@ -100,7 +101,7 @@ function colorClickBlink(cycleMemmory) {
         buttonValue = 2;
         click++;
         valueCheck.push(buttonValue);
-        patternCheck(valueCheck, cycleMemmory);
+        patternCheck(valueCheck, cycleMemmory, click);
     });
 
     let greenBtn = colorBtn[2];
@@ -112,7 +113,7 @@ function colorClickBlink(cycleMemmory) {
         buttonValue = 3;
         click++;
         valueCheck.push(buttonValue);
-        patternCheck(valueCheck, cycleMemmory);
+        patternCheck(valueCheck, cycleMemmory, click);
     });
 
     let yellowBtn = colorBtn[3];
@@ -124,16 +125,20 @@ function colorClickBlink(cycleMemmory) {
         buttonValue = 4;
         click++;
         valueCheck.push(buttonValue);
-        patternCheck(valueCheck, cycleMemmory);
+        patternCheck(valueCheck, cycleMemmory, click);
     });
-
-    let startBtn = document.getElementById('start-button');
-    startBtn.addEventListener('click', function () {
-        valueCheck.length = 0;
-    })
 }
 
-function patternCheck(valueCheck, cycleMemmory) {
-    console.log('Skaiciu eile - ' + cycleMemmory);
-    console.log('Miktu paspaudimo eile - ' + valueCheck);
+function patternCheck(valueCheck, cycleMemmory, click) {
+    console.log(cycleMemmory[click - 1]);
+    console.log(valueCheck[click - 1]);
+    if (cycleMemmory[click - 1] == valueCheck[click - 1]) {
+        if (cycleMemmory.length == click) {
+            colorBlinkPattern(cycleMemmory, click);
+        }
+    } else {
+        document.getElementById('start-button').disabled = false;
+        startGame();
+        console.log('neteisingai');
+    }
 }
