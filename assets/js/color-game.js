@@ -5,11 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     startGame();
 });
 
+
 function startGame() {
+    let gameOwer = 0;
     let cycle = 0;
     let cycleMemmory = [];
     cycleMemmory.length = 0;
 
+    document.getElementById('start-button').disabled = false;
     document.querySelectorAll('.color-btn').forEach(colorBtn => {
         colorBtn.disabled = true;
     });
@@ -18,7 +21,7 @@ function startGame() {
     $('#start-button').off().on('click', function () {
         startBtn.disabled = true;
 
-        colorBlinkPattern(cycleMemmory, cycle);
+        colorBlinkPattern(cycleMemmory, cycle, gameOwer);
     });
 }
 
@@ -27,12 +30,16 @@ function startGame() {
 //  2021-07-29
 //  [https://stackoverflow.com/questions/29883259/how-do-you-slow-down-the-execution-of-a-for-loop-in-javascript]
 
-function colorBlinkPattern(cycleMemmory, cycle) {
+function colorBlinkPattern(cycleMemmory, cycle, gameOwer) {
     let randomNum = Math.floor(Math.random() * 4) + 1;
-    cycleMemmory.push(randomNum);
-    cycle++;
+    if (gameOwer == 0) {
+        cycleMemmory.push(randomNum);
+        cycle++;
+    }
     console.log('------Ciklas------ - ' + cycle);
     console.log('Ciklos skaiciu eiga - ' + cycleMemmory);
+    console.log('Dabartinis skaicius - ' + cycleMemmory[cycle - 1]);
+    console.log(gameOwer);
 
     let blink = 0;
     document.querySelectorAll('.color-btn').forEach(colorBtn => {
@@ -58,19 +65,22 @@ function colorBlinkPattern(cycleMemmory, cycle) {
                 let colorBtn = document.getElementsByClassName('color-btn');
                 colorBtn[colorNum - 1].style.backgroundColor = '';
                 blink++;
-                if (cycle == blink) {
+                if (cycle == blink && gameOwer == 0) {
                     document.querySelectorAll('.color-btn').forEach(colorBtn => {
                         colorBtn.disabled = false;
                     });
                     document.getElementById('start-button').disabled = true;
                     colorClickBlink(cycleMemmory);
                     console.log('---');
+                } else {
+                    if (cycle == blink && gameOwer == 1) {
+                        startGame();
+                    }
                 }
             }, 500);
         }, 1000 * i);
     }
 }
-
 
 //  Function for button color change after click
 
@@ -130,15 +140,21 @@ function colorClickBlink(cycleMemmory) {
 }
 
 function patternCheck(valueCheck, cycleMemmory, click) {
-    console.log(cycleMemmory[click - 1]);
-    console.log(valueCheck[click - 1]);
     if (cycleMemmory[click - 1] == valueCheck[click - 1]) {
         if (cycleMemmory.length == click) {
-            colorBlinkPattern(cycleMemmory, click);
+            document.querySelectorAll('.color-btn').forEach(colorBtn => {
+                colorBtn.disabled = true;
+            });
+            setTimeout(function () {
+                gameOwer = 0;
+                colorBlinkPattern(cycleMemmory, click, gameOwer)
+            }, 750);
         }
     } else {
-        document.getElementById('start-button').disabled = false;
-        startGame();
+        gameOwer = 1;
+        setTimeout(function () {
+            colorBlinkPattern(cycleMemmory, click, gameOwer);
+        }, 750);
         console.log('neteisingai');
     }
 }
