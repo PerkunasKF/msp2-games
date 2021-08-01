@@ -70,7 +70,7 @@ function colorBlinkPattern(cycleMemmory, cycle, gameOwer) {
                         colorBtn.disabled = false;
                     });
                     document.getElementById('start-button').disabled = true;
-                    colorClickBlink(cycleMemmory);
+                    colorClickBlink(cycleMemmory, gameOwer);
                     console.log('---');
                 } else {
                     if (cycle == blink && gameOwer == 1) {
@@ -84,7 +84,7 @@ function colorBlinkPattern(cycleMemmory, cycle, gameOwer) {
 
 //  Function for button color change after click
 
-function colorClickBlink(cycleMemmory) {
+function colorClickBlink(cycleMemmory, gameOwer) {
     let colorBtn = document.getElementsByClassName('color-btn');
     let buttonValue = 0;
     let valueCheck = [];
@@ -99,7 +99,7 @@ function colorClickBlink(cycleMemmory) {
         buttonValue = 1;
         click++;
         valueCheck.push(buttonValue);
-        patternCheck(valueCheck, cycleMemmory, click);
+        patternCheck(valueCheck, cycleMemmory, click, gameOwer);
     });
 
     let blueBtn = colorBtn[1];
@@ -111,7 +111,7 @@ function colorClickBlink(cycleMemmory) {
         buttonValue = 2;
         click++;
         valueCheck.push(buttonValue);
-        patternCheck(valueCheck, cycleMemmory, click);
+        patternCheck(valueCheck, cycleMemmory, click, gameOwer);
     });
 
     let greenBtn = colorBtn[2];
@@ -123,7 +123,7 @@ function colorClickBlink(cycleMemmory) {
         buttonValue = 3;
         click++;
         valueCheck.push(buttonValue);
-        patternCheck(valueCheck, cycleMemmory, click);
+        patternCheck(valueCheck, cycleMemmory, click, gameOwer);
     });
 
     let yellowBtn = colorBtn[3];
@@ -135,13 +135,13 @@ function colorClickBlink(cycleMemmory) {
         buttonValue = 4;
         click++;
         valueCheck.push(buttonValue);
-        patternCheck(valueCheck, cycleMemmory, click);
+        patternCheck(valueCheck, cycleMemmory, click, gameOwer);
     });
 }
 
-function patternCheck(valueCheck, cycleMemmory, click) {
+function patternCheck(valueCheck, cycleMemmory, click, gameOwer) {
     if (cycleMemmory[click - 1] == valueCheck[click - 1]) {
-        if (cycleMemmory.length == click) {
+        if (cycleMemmory.length == click && gameOwer == 0) {
             document.querySelectorAll('.color-btn').forEach(colorBtn => {
                 colorBtn.disabled = true;
             });
