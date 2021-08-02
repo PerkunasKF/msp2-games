@@ -190,9 +190,14 @@ function highScore() {
 }
 
 // Function to play a sound on clicking one of the color buttons and on color blink
-// Audio was downloaded form [https://mixkit.co/free-sound-effects/whip/] om 2021-08-02
+// Audio was downloaded form [https://mixkit.co/free-sound-effects/stomp/] om 2021-08-02
 
 function clickSound() {
-    let audio = new Audio('/assets/sound/stomp-1.mp3');
+    let audio = document.getElementById('stomp');
     audio.play();
+    //let audio = new Audio('assets/sound/stomp-1.mp3');
+    //audio.play();
+
+    //var x = document.getElementById("myAudio").duration;
+    //document.getElementById("demo").innerHTML = x;
 }
