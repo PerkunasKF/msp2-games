@@ -139,22 +139,44 @@ function colorClickBlink(cycleMemmory, gameOwer) {
     });
 }
 
+// Function to check if the player is clicking the color patern correctly
+
 function patternCheck(valueCheck, cycleMemmory, click, gameOwer) {
     if (cycleMemmory[click - 1] == valueCheck[click - 1]) {
         if (cycleMemmory.length == click && gameOwer == 0) {
             document.querySelectorAll('.color-btn').forEach(colorBtn => {
                 colorBtn.disabled = true;
             });
+            currentScore();
             setTimeout(function () {
                 gameOwer = 0;
                 colorBlinkPattern(cycleMemmory, click, gameOwer)
             }, 750);
         }
     } else {
+        highScore();
         gameOwer = 1;
         setTimeout(function () {
             colorBlinkPattern(cycleMemmory, click, gameOwer);
         }, 750);
         console.log('neteisingai');
     }
+}
+
+// Functin to count curent games best performance
+
+function currentScore() {
+    let score = parseInt(document.getElementById('current-score').innerHTML);
+    document.getElementById('current-score').innerHTML = ++score;
+}
+
+// Function to log highes score made
+
+function highScore() {
+    let score = parseInt(document.getElementById('current-score').innerHTML);
+    let highscore = parseInt(document.getElementById('high-score').innerHTML);
+    if (highscore < score) {
+        document.getElementById('high-score').innerHTML = score;
+    }
+    document.getElementById('current-score').innerHTML = 0;
 }
