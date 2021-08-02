@@ -93,6 +93,7 @@ function colorClickBlink(cycleMemmory, gameOwer) {
     let redBtn = colorBtn[0];
     $('#red-button').off().on('click', function () {
         redBtn.style.backgroundColor = 'red';
+        clickSound();
         setTimeout(function () {
             redBtn.style.backgroundColor = '';
         }, 150);
@@ -105,6 +106,7 @@ function colorClickBlink(cycleMemmory, gameOwer) {
     let blueBtn = colorBtn[1];
     $('#blue-button').off().on('click', function () {
         blueBtn.style.backgroundColor = 'blue';
+        clickSound()
         setTimeout(function () {
             blueBtn.style.backgroundColor = '';
         }, 150);
@@ -117,6 +119,7 @@ function colorClickBlink(cycleMemmory, gameOwer) {
     let greenBtn = colorBtn[2];
     $('#green-button').off().on('click', function () {
         greenBtn.style.backgroundColor = 'green';
+        clickSound()
         setTimeout(function () {
             greenBtn.style.backgroundColor = '';
         }, 150);
@@ -129,6 +132,7 @@ function colorClickBlink(cycleMemmory, gameOwer) {
     let yellowBtn = colorBtn[3];
     $('#yellow-button').off().on('click', function () {
         yellowBtn.style.backgroundColor = 'yellow';
+        clickSound()
         setTimeout(function () {
             yellowBtn.style.backgroundColor = '';
         }, 150);
@@ -179,4 +183,12 @@ function highScore() {
         document.getElementById('high-score').innerHTML = score;
     }
     document.getElementById('current-score').innerHTML = 0;
+}
+
+// Function to play a sound on clicking one of the color buttons
+// Audio was downloaded form [https://mixkit.co/free-sound-effects/whip/] om 2021-08-02
+
+function clickSound() {
+    var audio = new Audio('/assets/sound/stomp-1.mp3');
+    audio.play();
 }
