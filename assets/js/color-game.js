@@ -51,15 +51,19 @@ function colorBlinkPattern(cycleMemmory, cycle, gameOwer) {
         setTimeout(function () {
             if (colorNum == 1) {
                 document.getElementById('red-button').style.backgroundColor = 'red';
+                clickSound();
             }
             if (colorNum == 2) {
                 document.getElementById('blue-button').style.backgroundColor = 'blue';
+                clickSound();
             }
             if (colorNum == 3) {
                 document.getElementById('green-button').style.backgroundColor = 'green';
+                clickSound();
             }
             if (colorNum == 4) {
                 document.getElementById('yellow-button').style.backgroundColor = 'yellow';
+                clickSound();
             }
             setTimeout(function () {
                 let colorBtn = document.getElementsByClassName('color-btn');
@@ -185,10 +189,10 @@ function highScore() {
     document.getElementById('current-score').innerHTML = 0;
 }
 
-// Function to play a sound on clicking one of the color buttons
+// Function to play a sound on clicking one of the color buttons and on color blink
 // Audio was downloaded form [https://mixkit.co/free-sound-effects/whip/] om 2021-08-02
 
 function clickSound() {
-    var audio = new Audio('/assets/sound/stomp-1.mp3');
+    let audio = new Audio('/assets/sound/stomp-1.mp3');
     audio.play();
 }
