@@ -146,7 +146,7 @@ header {
     top: 53%;
 }
 
-/*------------------- Game Area for small screens --------------------*/
+/*------------------- Game color area for small screens --------------------*/
 @media screen and (max-width: 600px) {
     #color-button-area {
         width: 350px;
@@ -181,12 +181,12 @@ header {
     #start-button {
         width: 140px;
         height: 140px;
-        border: 10px solid black;
-        top: 60%;
+
+        top: 61%;
     }
 }
 
-/*------------------- Game Area for small screens --------------------*/
+/*------------------- Mode buttons --------------------*/
 
 .mode-btn {
     width: 250px;
@@ -198,6 +198,33 @@ header {
     background-color: #e0a224;
 
     margin-top: 35%;
+    margin-left: 20%;
+}
+
+@media screen and (max-width: 1300px) {
+    .mode-btn {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .mode-btn {
+        width: 150px;
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .mode-btn {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mode-btn {
+        width: 100px;
+        height: 50px;
+    }
 }
 
 /*-------------------------------------------------------------*/
@@ -230,6 +257,40 @@ header {
     font-weight: 500;
     font-size: 56px;
     color: black;
+}
+
+@media screen and (max-width: 1200px) {
+    .score-tag {
+        font-size: 42px;
+    }
+    
+    .score-holder {
+        height: 75px;
+        width: 150px;
+
+        font-size: 48px;
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .score-tag {
+        font-size: 28px;
+    }
+    
+    .score-holder {
+        height: 50px;
+        width: 100px;
+
+        font-size: 28px;
+        line-height: 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .score-tag {
+        font-size: 20px;
+    }
 }
 
 /*-------------------------------------------------------------*/

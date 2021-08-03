@@ -29,8 +29,8 @@
         <div class="container-fluid">
             <div id="header-row" class="row">
                 <div id="home-icon-container" class="col vertical-center header-link-col">
-                    <a class="header-link" href="#"><img id="home-icon"
-                            src="assets/img/color-disc-icon_eddited.jpg" alt="Home icon"></a>
+                    <a class="header-link" href="#"><img id="home-icon" src="assets/img/color-disc-icon_eddited.jpg"
+                            alt="Home icon"></a>
                 </div>
                 <div id="tutorial-icon-container" class="col vertical-center header-link-col">
                     <a class="header-link" href="#"><i id="turorial-icon" class="fas fa-gamepad"></i></a>
@@ -41,41 +41,61 @@
 
     <!-- Game area -->
     <div id="game-area-container" class="container my-container">
-        <div class="row my-row">
+        <div class="container d-block d-lg-none ">
+            <div class="row my-row">
+                <div class="col vertical-center my-col">
+                    <button class="mode-btn clasic">Medium</button>
+                </div>
+                <div class="col vertical-center my-col">
+                    <button class="mode-btn extriem">Extriem</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center my-row">
             <!-- Medium mode selection -->
-            <div class="col vertical-center my-col">
-                <button id="clasic" class="mode-btn">Medium</button>
+            <div class="col vertical-center d-none d-lg-block my-col">
+                <button class="mode-btn clasic">Medium</button>
             </div>
             <!-- Start, color buttons -->
-            <div id="color-button-area" class="col-6 vertical-center my-col">
+            <div id="color-button-area" class="col-6 my-col">
                 <div class="row">
-                    <div id="red-button" class="col color-area color-btn vertical-center">
-                        <button id="start-button"">Start</button>
+                    <div id="red-button" class="col color-area color-btn">
+                        <button id="start-button">Start</button>
                     </div>
-                    <div id="blue-button" class="col color-area color-btn vertical-center">
+                    <div id="blue-button" class="col color-area color-btn">
                     </div>
                 </div>
                 <div class="row">
-                    <div id="green-button" class="col color-area color-btn vertical-center">
+                    <div id="green-button" class="col color-area color-btn">
                     </div>
-                    <div id="yellow-button" class="col color-area color-btn vertical-center">
+                    <div id="yellow-button" class="col color-area color-btn">
                     </div>
                 </div>
             </div>
             <!-- Extreem mode selection -->
-            <div class="col vertical-center my-col">
-                <button id="extriem" class="mode-btn">Extriem</button>
+            <div class="col vertical-center d-none d-lg-block my-col">
+                <button class="mode-btn extriem">Extriem</button>
             </div>
         </div>
     </div>
 
-    <div id="score-container" class="container my-container">
+    <div class="container score-container d-none d-md-block my-container">
         <div class="row my-row">
             <div class="col vertical-center my-col">
-                <p class="score-tag">Current Score  <span id="current-score" class="score-holder">0</span></p>
+                <p class="score-tag">Current Score <span id="current-score-big" class="score-holder">0</span></p>
             </div>
             <div class="col vertical-center my-col">
-                <p class="score-tag"><span id="high-score" class="score-holder">0</span>  High Score</p>
+                <p class="score-tag"><span id="high-score-big" class="score-holder">0</span> High Score</p>
+            </div>
+        </div>
+    </div>
+    <div class="container score-container d-block d-md-none my-container">
+        <div class="row ">
+            <div class="col vertical-center my-col">
+                <p class="score-tag"><br>Current Score<br><span id="current-score" class="score-holder">0</span></p>
+            </div>
+            <div class="col vertical-center my-col">
+                <p class="score-tag"><br>High Score<br><span id="high-score" class="score-holder">0</span></p>
             </div>
         </div>
     </div>

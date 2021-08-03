@@ -2,6 +2,9 @@
 // Counts cycles and cycle number pater, check if the start game button is presst.
 
 document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.color-btn').forEach(colorBtn => {
+        colorBtn.disabled = true;
+    });
     startGame();
 });
 
@@ -13,9 +16,6 @@ function startGame() {
     cycleMemmory.length = 0;
 
     document.getElementById('start-button').disabled = false;
-    document.querySelectorAll('.color-btn').forEach(colorBtn => {
-        colorBtn.disabled = true;
-    });
 
     let startBtn = document.getElementById('start-button');
     $('#start-button').off().on('click', function () {
@@ -31,6 +31,9 @@ function startGame() {
 //  [https://stackoverflow.com/questions/29883259/how-do-you-slow-down-the-execution-of-a-for-loop-in-javascript]
 
 function colorBlinkPattern(cycleMemmory, cycle, gameOwer) {
+    document.querySelectorAll('.color-btn').forEach(colorBtn => {
+        colorBtn.disabled = true;
+    });
     let randomNum = Math.floor(Math.random() * 4) + 1;
     if (gameOwer == 0) {
         cycleMemmory.push(randomNum);
@@ -42,9 +45,6 @@ function colorBlinkPattern(cycleMemmory, cycle, gameOwer) {
     console.log(gameOwer);
 
     let blink = 0;
-    document.querySelectorAll('.color-btn').forEach(colorBtn => {
-        colorBtn.disabled = true;
-    });
 
     for (let i = 0; i < cycleMemmory.length; i++) {
         let colorNum = cycleMemmory[i];
@@ -152,9 +152,6 @@ function colorClickBlink(cycleMemmory, gameOwer) {
 function patternCheck(valueCheck, cycleMemmory, click, gameOwer) {
     if (cycleMemmory[click - 1] == valueCheck[click - 1]) {
         if (cycleMemmory.length == click && gameOwer == 0) {
-            document.querySelectorAll('.color-btn').forEach(colorBtn => {
-                colorBtn.disabled = true;
-            });
             currentScore();
             setTimeout(function () {
                 gameOwer = 0;
@@ -176,6 +173,8 @@ function patternCheck(valueCheck, cycleMemmory, click, gameOwer) {
 function currentScore() {
     let score = parseInt(document.getElementById('current-score').innerHTML);
     document.getElementById('current-score').innerHTML = ++score;
+    let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
+    document.getElementById('current-score-big').innerHTML = ++scoreBg;
 }
 
 // Function to log highes score made
@@ -185,6 +184,11 @@ function highScore() {
     let highscore = parseInt(document.getElementById('high-score').innerHTML);
     if (highscore < score) {
         document.getElementById('high-score').innerHTML = score;
+    }
+    let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
+    let highscoreBg = parseInt(document.getElementById('high-score-big').innerHTML);
+    if (highscoreBg < scoreBg) {
+        document.getElementById('high-score-big').innerHTML = scoreBg;
     }
     document.getElementById('current-score').innerHTML = 0;
 }
