@@ -18,17 +18,80 @@
 /*                     Global styles                           */
 /*-------------------------------------------------------------*/
 
+body {
+    background-color: black;
+}
+
 .vertical-center {
     text-align: center;
+}
+
+/*-------------------------------------------------------------*/
+/*                         Header                              */
+/*-------------------------------------------------------------*/
+
+header {
+    background-color: #e0a224;
+}
+
+#header-row {
+    height: 100px;
+    border-bottom: 6px solit black;
+}
+
+#home-icon-container {
+    border: solid black;
+    border-right-width: 3px;
+}
+
+#tutorial-icon-container {
+    border: solid black;
+    border-left-width: 3px;
+}
+
+#home-link {
+    width: 75px;
+    height: 75px;
+}
+
+#home-icon {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+
+    margin-top: 20px;
+}
+
+#home-icon:hover {
+    filter: saturate(4.2);
+}
+
+#turorial-icon {
+    font-size: 50px;
+    color: black;
+
+    margin-top: 20px;
+}
+
+#turorial-icon:hover {
+    color: red;
 }
 
 /*-------------------------------------------------------------*/
 /*                        Game Area                            */
 /*-------------------------------------------------------------*/
 
+#game-area-container {
+    margin-top: 20px;
+}
+
 #color-button-area {
     width: 450px;
     height: 450px;
+}
+
+#start-button {
+    background-color: #e0a224;
 }
 
 .color-area {
@@ -77,14 +140,14 @@
     border-radius: 50%;
 
     position: relative;
-    right:-63%;
-    z-index:1000;
+    right: -63%;
+    z-index: 1000;
     float: right;
     top: 53%;
 }
 
-/*                        Game Area for small screens                            */
-@media screen and (max-width: 600px){
+/*------------------- Game Area for small screens --------------------*/
+@media screen and (max-width: 600px) {
     #color-button-area {
         width: 350px;
         height: 350px;
@@ -94,31 +157,88 @@
         width: 175px;
         height: 175px;
     }
-    
+
     #red-button {
         border-width: 10px 5px 5px 10px;
         border-top-left-radius: 175px;
     }
-    
+
     #blue-button {
         border-width: 10px 10px 5px 5px;
         border-top-right-radius: 175px;
     }
-    
+
     #green-button {
         border-width: 5px 5px 10px 10px;
         border-bottom-left-radius: 175px;
     }
-    
+
     #yellow-button {
         border-width: 5px 10px 10px 5px;
         border-bottom-right-radius: 175px;
     }
-    
+
     #start-button {
         width: 140px;
         height: 140px;
         border: 10px solid black;
         top: 60%;
     }
+}
+
+/*------------------- Game Area for small screens --------------------*/
+
+.mode-btn {
+    width: 250px;
+    height: 125px;
+
+    border: 3px solid black;
+    border-radius: 50px;
+
+    background-color: #e0a224;
+
+    margin-top: 35%;
+}
+
+/*-------------------------------------------------------------*/
+/*                        Score Area                           */
+/*-------------------------------------------------------------*/
+
+#score-container {
+    height: 100%;
+}
+
+.score-tag {
+    font-weight: 500;
+    font-size: 46px;
+
+    color: #fff;
+}
+
+.score-holder {
+    margin-top: 15px;
+
+    display: inline-block;
+    height: 100px;
+    width: 200px;
+    border: 6px solid black;
+    border-radius: 50px;
+
+    background-color: #fff;
+
+    line-height: 80px;
+    font-weight: 500;
+    font-size: 56px;
+    color: black;
+}
+
+/*-------------------------------------------------------------*/
+/*                        Footer                               */
+/*-------------------------------------------------------------*/
+
+footer {
+    margin-top: 15px;
+    height: 100px;
+
+    background-color: #e0a224;
 }
