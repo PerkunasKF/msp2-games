@@ -82,3 +82,43 @@
     float: right;
     top: 53%;
 }
+
+/*                        Game Area for small screens                            */
+@media screen and (max-width: 600px){
+    #color-button-area {
+        width: 350px;
+        height: 350px;
+    }
+
+    .color-area {
+        width: 175px;
+        height: 175px;
+    }
+    
+    #red-button {
+        border-width: 10px 5px 5px 10px;
+        border-top-left-radius: 175px;
+    }
+    
+    #blue-button {
+        border-width: 10px 10px 5px 5px;
+        border-top-right-radius: 175px;
+    }
+    
+    #green-button {
+        border-width: 5px 5px 10px 10px;
+        border-bottom-left-radius: 175px;
+    }
+    
+    #yellow-button {
+        border-width: 5px 10px 10px 5px;
+        border-bottom-right-radius: 175px;
+    }
+    
+    #start-button {
+        width: 140px;
+        height: 140px;
+        border: 10px solid black;
+        top: 60%;
+    }
+}
