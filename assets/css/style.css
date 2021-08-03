@@ -1,0 +1,84 @@
+/*-------------------------------------------------------------*/
+/*                      My Styles                              */
+/*-------------------------------------------------------------*/
+
+.my-container {
+    border: 2px solid black;
+}
+
+.my-row {
+    border: 2px solid red;
+}
+
+.my-col {
+    border: 2px solid blue;
+}
+
+/*-------------------------------------------------------------*/
+/*                     Global styles                           */
+/*-------------------------------------------------------------*/
+
+.vertical-center {
+    text-align: center;
+}
+
+/*-------------------------------------------------------------*/
+/*                        Game Area                            */
+/*-------------------------------------------------------------*/
+
+#color-button-area {
+    width: 450px;
+    height: 450px;
+}
+
+.color-area {
+    width: 220px;
+    height: 220px;
+
+    border: solid black;
+}
+
+#red-button {
+    border-width: 10px 5px 5px 10px;
+    border-top-left-radius: 220px;
+
+    margin-top: 4px;
+
+    background-color: #ab0a0a;
+}
+
+#blue-button {
+    border-width: 10px 10px 5px 5px;
+    border-top-right-radius: 220px;
+
+    margin-top: 4px;
+
+    background-color: #080694;
+}
+
+#green-button {
+    border-width: 5px 5px 10px 10px;
+    border-bottom-left-radius: 220px;
+
+    background-color: #096315;
+}
+
+#yellow-button {
+    border-width: 5px 10px 10px 5px;
+    border-bottom-right-radius: 220px;
+
+    background-color: #979908;
+}
+
+#start-button {
+    width: 200px;
+    height: 200px;
+    border: 10px solid black;
+    border-radius: 50%;
+
+    position: relative;
+    right:-63%;
+    z-index:1000;
+    float: right;
+    top: 53%;
+}

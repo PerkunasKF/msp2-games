@@ -50,19 +50,19 @@ function colorBlinkPattern(cycleMemmory, cycle, gameOwer) {
         let colorNum = cycleMemmory[i];
         setTimeout(function () {
             if (colorNum == 1) {
-                document.getElementById('red-button').style.backgroundColor = 'red';
+                document.getElementById('red-button').style.backgroundColor = '#ff2b1c';
                 clickSound();
             }
             if (colorNum == 2) {
-                document.getElementById('blue-button').style.backgroundColor = 'blue';
+                document.getElementById('blue-button').style.backgroundColor = '#1ca0ff';
                 clickSound();
             }
             if (colorNum == 3) {
-                document.getElementById('green-button').style.backgroundColor = 'green';
+                document.getElementById('green-button').style.backgroundColor = '#1cff91';
                 clickSound();
             }
             if (colorNum == 4) {
-                document.getElementById('yellow-button').style.backgroundColor = 'yellow';
+                document.getElementById('yellow-button').style.backgroundColor = '#fff41c';
                 clickSound();
             }
             setTimeout(function () {
@@ -96,7 +96,7 @@ function colorClickBlink(cycleMemmory, gameOwer) {
 
     let redBtn = colorBtn[0];
     $('#red-button').off().on('click', function () {
-        redBtn.style.backgroundColor = 'red';
+        redBtn.style.backgroundColor = '#ff2b1c';
         clickSound();
         setTimeout(function () {
             redBtn.style.backgroundColor = '';
@@ -109,7 +109,7 @@ function colorClickBlink(cycleMemmory, gameOwer) {
 
     let blueBtn = colorBtn[1];
     $('#blue-button').off().on('click', function () {
-        blueBtn.style.backgroundColor = 'blue';
+        blueBtn.style.backgroundColor = '#1ca0ff';
         clickSound()
         setTimeout(function () {
             blueBtn.style.backgroundColor = '';
@@ -122,7 +122,7 @@ function colorClickBlink(cycleMemmory, gameOwer) {
 
     let greenBtn = colorBtn[2];
     $('#green-button').off().on('click', function () {
-        greenBtn.style.backgroundColor = 'green';
+        greenBtn.style.backgroundColor = '#1cff91';
         clickSound()
         setTimeout(function () {
             greenBtn.style.backgroundColor = '';
@@ -135,7 +135,7 @@ function colorClickBlink(cycleMemmory, gameOwer) {
 
     let yellowBtn = colorBtn[3];
     $('#yellow-button').off().on('click', function () {
-        yellowBtn.style.backgroundColor = 'yellow';
+        yellowBtn.style.backgroundColor = '#fff41c';
         clickSound()
         setTimeout(function () {
             yellowBtn.style.backgroundColor = '';

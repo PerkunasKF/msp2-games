@@ -6,28 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/color-game.js"></script>
 
-    <title>Document</title>
+    <title>Color Game</title>
 </head>
 
 <body>
-    <div id="game-area">
-        <button id="red-button" class="color-btn">Button 1</button>
-        <button id="blue-button" class="color-btn">Button 2</button>
-        <button id="green-button" class="color-btn">Button 3</button>
-        <button id="yellow-button" class="color-btn">Button 4</button>
-        <button id="start-button" style="background-color: orange;">Start</button>
+
+    <!-- Navigations -->
+    <header>
+        <div class="container-fluid my-container">
+            <div class="row my-row">
+                <div class="col vertical-center my-col">
+                    <a href="#">Home</a>
+                </div>
+                <div class="col vertical-center my-col">
+                    <a href="#">Tutorial</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Game area -->
+    <div class="container my-container">
+        <div class="row my-row">
+            <!-- Medium mode selection -->
+            <div class="col vertical-center my-col">
+                <button id="clasic">Medium</button>
+            </div>
+            <!-- Start, color buttons -->
+            <div id="color-button-area" class="col-6 vertical-center my-col">
+                <div class="row">
+                    <div id="red-button" class="col color-area color-btn vertical-center">
+                        <button id="start-button" style="background-color: orange;">Start</button>
+                    </div>
+                    <div id="blue-button" class="col color-area color-btn vertical-center">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="green-button" class="col color-area color-btn vertical-center">
+                    </div>
+                    <div id="yellow-button" class="col color-area color-btn vertical-center">
+                    </div>
+                </div>
+            </div>
+            <!-- Extreem mode selection -->
+            <div class="col vertical-center my-col">
+
+                <button id="extriem">Extriem</button>
+            </div>
+        </div>
     </div>
-    <div id="score-area">
-        <p>Current Score - <span id="current-score">0</span></p>
-        <p>High Score - <span id="high-score">0</span></p>
+
+    <div class="continer my-container">
+        <div class="row my-row">
+            <div id="score-area" class="col vertical-center my-col">
+                <p>Current Score - <span id="current-score">0</span></p>
+            </div>
+            <div class="col vertical-center my-col">
+                <p>High Score - <span id="high-score">0</span></p>
+            </div>
+        </div>
     </div>
-    <div id="game-mode-area">
-        <button id="clasic">Medium</button>
-        <button id="extriem">Extriem</button>
-    </div>
+
+    <footer class="vertical-center my-container">Footer</footer>
+
+    <!-- Sound for the blink action, currantly dos not work on a hosted site,
+    becose the site can not find the file sorce -->
+
     <audio id="stomp">
         <source src="/assets/sound/stomp-1_short.mp3" type="audio/mp3">
     </audio>
