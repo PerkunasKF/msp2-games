@@ -31,7 +31,6 @@ function disableStart() {
 // Enable start button
 
 function enableStart() {
-    console.log('test');
     document.getElementById('start-button').style.backgroundColor = '';
     document.getElementById('start-button').removeAttribute('disabled');
     //document.getElementById('start-button').removeAttribute("disabled");
@@ -196,9 +195,13 @@ function patternCheck(valueCheck, click) {
         highScore();
         disableColors();
         gameOwer = 1;
+        document.getElementById('start-button').style.backgroundColor = 'red';
+        setTimeout(function () {
+            startGame();
+        }, 1000);
         setTimeout(function () {
             startClick();
-        }, 1000);
+        }, 1500 * cycle);
     }
 }
 
