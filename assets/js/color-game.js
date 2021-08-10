@@ -3,10 +3,15 @@
 var cycle = 0;
 var cycleMemmory = [];
 var gameOwer = 0;
+var tutorial = false;
+var redClick = false;
+var blueClick = false;
+var greenClick = false;
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Pakrautas');
     startClick();
+    startTutorial();
 })
 
 function startClick() {
@@ -16,10 +21,27 @@ function startClick() {
     enableStart();
     disableColors();
     $('#start-button').off().on('click', function () {
-        disableStart();
-        startGame();
+        if (tutorial == false) {
+            disableStart();
+            startGame();
+        }
     });
 }
+
+function startTutorial() {
+    document.getElementById('turorial-icon').addEventListener('click', function () {
+        cycle = 0;
+        cycleMemmory = [];
+        gameOwer = 0;
+        tutorial = true;
+        redClick = false;
+        blueClick = false;
+        greenClick = false;
+        enableStart();
+        AnimationIncres();
+    });
+}
+
 
 // Disables start button
 
@@ -136,10 +158,15 @@ function colorClickBlink() {
         colorValue = 1;
         colorPattern.push(colorValue);
         click++;
+        if (tutorial == false) {
+            patternCheck(colorPattern, click);
+        }
+        if (tutorial == true) {
+            turorialCheck(colorPattern, click);
+        }
         setTimeout(function () {
             document.getElementById('red-button').style.backgroundColor = '';
         }, 150);
-        patternCheck(colorPattern, click);
     });
 
     $('#blue-button').off().on('click', function () {
@@ -148,7 +175,12 @@ function colorClickBlink() {
         colorValue = 2;
         colorPattern.push(colorValue);
         click++;
-        patternCheck(colorPattern, click);
+        if (tutorial == false) {
+            patternCheck(colorPattern, click);
+        }
+        if (tutorial == true) {
+            turorialCheck(colorPattern, click);
+        }
         setTimeout(function () {
             document.getElementById('blue-button').style.backgroundColor = '';
         }, 150);
@@ -160,7 +192,12 @@ function colorClickBlink() {
         colorValue = 3;
         colorPattern.push(colorValue);
         click++;
-        patternCheck(colorPattern, click);
+        if (tutorial == false) {
+            patternCheck(colorPattern, click);
+        }
+        if (tutorial == true) {
+            turorialCheck(colorPattern, click);
+        }
         setTimeout(function () {
             document.getElementById('green-button').style.backgroundColor = '';
         }, 150);
@@ -172,7 +209,12 @@ function colorClickBlink() {
         colorValue = 4;
         colorPattern.push(colorValue);
         click++;
-        patternCheck(colorPattern, click);
+        if (tutorial == false) {
+            patternCheck(colorPattern, click);
+        }
+        if (tutorial == true) {
+            turorialCheck(colorPattern, click);
+        }
         setTimeout(function () {
             document.getElementById('yellow-button').style.backgroundColor = '';
         }, 150);
@@ -228,6 +270,117 @@ function highScore() {
         document.getElementById('high-score-big').innerHTML = scoreBg;
     }
     document.getElementById('current-score').innerHTML = 0;
+}
+
+// Blinks start button for the tutorial
+
+function AnimationIncres() {
+    disableStartBlink = false;
+
+    for (let i = 0; i < 1000; i++) {
+        setTimeout(function () {
+            if (tutorial == true) {
+                $('#start-button').off().on('click', function () {
+                    disableStartBlink = true;
+                    turorialColorBlink();
+                    disableStart();
+                });
+            }
+            if (Number.isInteger(i / 2) && disableStartBlink == false) {
+                document.getElementById('start-button').style.borderColor = '#fff';
+            } else {
+                if (disableStartBlink == false)
+                    document.getElementById('start-button').style.borderColor = '';
+            }
+        }, 400 * i);
+    }
+}
+
+function turorialColorBlink() {
+    let colorNum = ['1', '2', '3'];
+    let colorRepeat = false;
+    let button = 1;
+
+    document.getElementById('start-button').style.borderColor = '';
+
+    for (let i = 0; i < colorNum.length; ++i) {
+        setTimeout(function () {
+            if (colorNum[i] == 1) {
+                document.getElementById('red-button').style.backgroundColor = '#ff2b1c';
+                clickSound();
+            }
+            if (colorNum[i] == 2) {
+                document.getElementById('blue-button').style.backgroundColor = '#1ca0ff';
+                clickSound();
+            }
+            if (colorNum[i] == 3) {
+                document.getElementById('green-button').style.backgroundColor = '#1cff91';
+                clickSound();
+            }
+            setTimeout(function () {
+                let colorBtn = document.getElementsByClassName('color-btn');
+                colorBtn[i].style.backgroundColor = '';
+                if (colorNum[i] == 3) {
+                    colorRepeat = true;
+                    if (colorRepeat == true) {
+                        enableColors();
+                        colorClickBlink();
+                        for (let i = 0; i < 1000; i++) {
+                            if (tutorial == true) {
+                                setTimeout(function () {
+                                    console.log(i);
+                                    let inte = Number.isInteger(i / 2);
+                                    if (inte == true && button == 1 && redClick == false) {
+                                        document.getElementById('red-button').style.borderColor = '#fff';
+                                    } else {
+                                        if (inte == false && redClick == false) {
+                                            document.getElementById('red-button').style.borderColor = '';
+                                        }
+                                    }
+                                    if (inte == true && button == 3 && blueClick == false) {
+                                        document.getElementById('blue-button').style.borderColor = '#fff';
+                                    } else {
+                                        if (inte == false && blueClick == false) {
+                                            document.getElementById('blue-button').style.borderColor = '';
+                                        }
+                                    }
+                                    if (inte == true && button == 5 && greenClick == false) {
+                                        document.getElementById('green-button').style.borderColor = '#fff';
+                                    } else {
+                                        if (inte == false && greenClick == false) {
+                                            document.getElementById('green-button').style.borderColor = '';
+                                        }
+                                    }
+                                    button++;
+                                    if (button == 6) {
+                                        button = 1;
+                                    }
+                                }, 500 * i);
+                            }
+                        }
+                    }
+                }
+            }, 500);
+        }, 1000 * i);
+    }
+}
+
+function turorialCheck(valueCheck, click) {
+    let buttonPattern = ['1', '2', '3'];
+    if (buttonPattern[click - 1] == valueCheck[click - 1]) {
+        setTimeout(function () {
+            if (valueCheck[click - 1] == 1) {
+                redClick = true;
+            }
+            if (valueCheck[click - 1] == 2) {
+                blueClick = true;
+            }
+            if (valueCheck[click - 1] == 3) {
+                greenClick = true;
+                location.reload();
+            }
+        }, 500);
+    }
 }
 
 // --------------------------------------------------------------------
