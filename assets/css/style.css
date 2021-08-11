@@ -4,7 +4,8 @@
 /*                      My Styles                              */
 /*-------------------------------------------------------------*/
 
-/*.my-container {
+/*
+.my-container {
     border: 2px solid black;
 }
 
@@ -14,14 +15,19 @@
 
 .my-col {
     border: 2px solid blue;
-}*/
+}
+*/
 
 /*-------------------------------------------------------------*/
 /*                     Global styles                           */
 /*-------------------------------------------------------------*/
 
 body {
-    background-color: black;
+    background-color: #fff;
+}
+
+#main-container {
+    margin-top: 7px;
 }
 
 .vertical-center {
@@ -35,101 +41,68 @@ p {
     color: #000;
 }
 
+
+
 /*-------------------------------------------------------------*/
-/*                         Header                              */
+/*                  Reset and tutorial area                    */
 /*-------------------------------------------------------------*/
 
-header {
-    background-color: #e0a224;
+#main-modes {
+    background-color: orange;
+    height: 250px;
+
+    border: 15px solid #000;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
 }
 
-#header-row {
-    height: 100px;
-    border-bottom: 6px solit black;
+.main-modes-icons {
+    font-size: 150px;
+    color: #000;
+
+    margin-top: 55px;
 }
 
-#home-icon-container {
-    border: solid black;
-    border-right-width: 3px;
-}
-
-#tutorial-icon-container {
-    border: solid black;
-    border-left-width: 3px;
-}
-
-#home-link {
-    width: 75px;
-    height: 75px;
-}
-
-#home-icon {
-    max-width: 50px;
-    max-height: 50px;
-    border-radius: 50%;
-
-    margin-top: 20px;
-}
-
-#home-icon:hover {
-    filter: saturate(4.2);
-}
-
-#turorial-icon {
-    font-size: 50px;
-    color: black;
-
-    margin-top: 20px;
-}
-
-#turorial-icon:hover {
-    color: red;
+.main-modes-icons:hover {
+    color: #fff;
 }
 
 /*-------------------------------------------------------------*/
 /*                        Game Area                            */
 /*-------------------------------------------------------------*/
 
-button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 52px;
-}
-
-#game-area-container {
-    margin-top: 20px;
-}
-
-#color-button-area {
-    width: 450px;
-    height: 450px;
-}
-
 #start-button {
-    background-color: #e0a224;
+    background-color: green;
 
-    width: 200px;
-    height: 200px;
-    border: 10px solid black;
+    width: 150px;
+    height: 150px;
+    border: 15px solid black;
     border-radius: 50%;
 
     position: relative;
-    right: 26%;
+    right: 35.5%;
     z-index: 500;
     float: right;
-    top: -158%;
+    top: 252px;
 }
 
 .color-area {
-    width: 220px;
-    height: 220px;
+    max-width: 210px;
+    height: 210px;
 
     border: solid black;
 }
 
+.color-btn {
+    position: relative;
+    z-index: 400;
+    right: -7%;
+    top: -40px;;
+}
+
 #red-button {
-    border-width: 10px 5px 5px 10px;
-    border-top-left-radius: 220px;
+    border-width: 35px 10px 10px 35px;
+    border-top-left-radius: 210px;
 
     margin-top: 4px;
 
@@ -137,8 +110,8 @@ button {
 }
 
 #blue-button {
-    border-width: 10px 10px 5px 5px;
-    border-top-right-radius: 220px;
+    border-width: 35px 35px 10px 10px;
+    border-top-right-radius: 210px;
 
     margin-top: 4px;
 
@@ -146,17 +119,23 @@ button {
 }
 
 #green-button {
-    border-width: 5px 5px 10px 10px;
-    border-bottom-left-radius: 220px;
+    border-width: 10px 10px 35px 35px;
+    border-bottom-left-radius: 210px;
 
     background-color: #096315;
 }
 
 #yellow-button {
-    border-width: 5px 10px 10px 5px;
-    border-bottom-right-radius: 220px;
+    border-width: 10px 35px 35px 10px;
+    border-bottom-right-radius: 210px;
 
     background-color: #979908;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 52px;
 }
 
 /*------------------- Game color area for small screens --------------------*/
@@ -202,17 +181,22 @@ button {
 
 /*------------------- Mode buttons --------------------*/
 
-.mode-btn {
+.button-are {
+    background-color: #000;
+    height: 200px;
+}
+
+.btns {
     width: 250px;
     height: 125px;
 
-    border: 3px solid rgb(174, 168, 168);
+    border: 5px solid rgb(174, 168, 168);
     border-radius: 50px;
 
     background-color: #000;
 
-    margin-top: 35%;
-    margin-left: 20%;
+    margin: auto;
+    margin-top: 35px;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -220,7 +204,7 @@ button {
 }
 
 .mode-btn:hover {
-    border: 3px solid #000;
+    border: 5px solid #000;
 
     background-color: #e0a224;
     color: #000;
@@ -259,79 +243,30 @@ button {
 /*                        Score Area                           */
 /*-------------------------------------------------------------*/
 
-#score-container {
-    height: 100%;
+#high-score-area {
+    background-color: orange;
+    margin-right: -10px;
+    height: 300px;
 }
 
-.score-tag {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 46px;
+.score-btn:hover {
+    border: 5px solid #000;
 
-    color: #fff;
-}
-
-.score-holder {
-    margin-top: 15px;
-
-    display: inline-block;
-    height: 100px;
-    width: 200px;
-    border: 6px solid black;
-    border-radius: 50px;
-
-    background-color: #fff;
-
-    line-height: 80px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 56px;
-    color: black;
-}
-
-@media screen and (max-width: 1200px) {
-    .score-tag {
-        font-size: 42px;
-    }
-
-    .score-holder {
-        height: 75px;
-        width: 150px;
-
-        font-size: 48px;
-        line-height: 60px;
-    }
-}
-
-@media screen and (max-width: 990px) {
-    .score-tag {
-        font-size: 28px;
-    }
-
-    .score-holder {
-        height: 50px;
-        width: 100px;
-
-        font-size: 28px;
-        line-height: 35px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .score-tag {
-        font-size: 20px;
-    }
+    background-color: #e0a224;
+    color: #000;
 }
 
 /*-------------------------------------------------------------*/
 /*                        Footer                               */
 /*-------------------------------------------------------------*/
 
-footer {
-    margin-top: 15px;
-    height: 100px;
+#footer {
+    background-color: orange;
+    height: 200px;
 
-    background-color: #e0a224;
+    border: 15px solid #000;
+    border-bottom-left-radius: 500px;
+    border-bottom-right-radius: 500px;
 }
 
 /*-------------------------------------------------------------*/

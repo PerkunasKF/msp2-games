@@ -24,111 +24,114 @@
 
 <body>
 
-    <!-- Navigations -->
-    <header>
-        <div class="container-fluid">
-            <div id="header-row" class="row">
-                <div id="home-icon-container" class="col vertical-center header-link-col">
-                    <a class="header-link" href="#"><img id="home-icon" src="assets/img/color-disc-icon_eddited.jpg"
-                            alt="Home icon"></a>
+    <div id="main-container" class="container-fluid my-container">
+        <div id="main-modes" class="row my-row">
+            <div class="col vertical-center my-col">
+                <i class="fas fa-gamepad main-modes-icons"></i>
+            </div>
+            <div class="col my-col">
+                <div class="row my-row">
+                    <div class="col my-col">
+                        <button id="start-button" class="disabled-button"><span
+                            id="current-score-big">0</span></button>
+                    </div>
                 </div>
-                <div id="tutorial-icon-container" class="col vertical-center header-link-col">
-                    <a class="header-link" href="#"><i id="turorial-icon" class="fas fa-gamepad"></i></a>
+                <div class="row my-row">
+                    <div class="col my-col">
+                        <div class="row">
+                            <div id="red-button" class="col color-area color-btn">
+                            </div>
+                            <div id="blue-button" class="col color-area color-btn">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="green-button" class="col color-area color-btn">
+                            </div>
+                            <div id="yellow-button" class="col color-area color-btn">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="col vertical-center my-col">
+                <i id="turorial-icon" class="far fa-question-circle main-modes-icons"></i>
+            </div>
         </div>
-    </header>
 
-    <!-- Game area -->
-    <div id="game-area-container" class="container my-container">
-        <div class="container d-block d-lg-none ">
-            <div class="row my-row">
-                <div class="col vertical-center my-col">
+        <div class="row button-are my-row">
+            <div class="col vertical-center my-col">
+                <button class="mode-btn btns">Medium</button>
+            </div>
+            <div class="col my-col"></div>
+            <div class="col vertical-center my-col">
+                <button id="high-score-button" class="score-btn btns"><span id="high-score-big">0</span></button>
+            </div>
+        </div>
+
+        <div id="footer" class="row my-row">
+            <div class="col my-col"></div>
+            <div class="col my-col"></div>
+        </div>
+    </div>
+    <audio id="stomp">
+        <source src="assets/sound/stomp-1_short.mp3" type="audio/mp3">
+    </audio>
+
+
+    <!--
+        <div class="container-fluid">
+
+        <div id="game-tutorial" class="row">
+
+            <div id="reset-game" class="col vertical-center main-modes">
+                <a class="header-link" href="#"><img id="reset-icon" src="assets/img/color-disc-icon_eddited.jpg"
+                        alt="Reset icon"></a>
+            </div>
+
+            <div id="tutorial-icon-container" class="col vertical-center main-modes">
+                <a class="header-link" href="#"><i id="turorial-icon" class="fas fa-gamepad"></i></a>
+            </div>
+            <div id="control-area" class="row">
+
+                <div id="mode-select" class="col vertical-center">
                     <button class="mode-btn clasic">Medium</button>
                 </div>
-                <div class="col vertical-center my-col">
-                    <button class="mode-btn extriem">Extriem</button>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center my-row">
 
-            <!-- Medium mode selection -->
-            <div class="col d-none d-lg-block my-col">
-                <button class="mode-btn clasic">Medium</button>
-            </div>
-
-            <!-- Start, color buttons -->
-            <div id="color-button-area" class="col-6 my-col">
-                <div class="row">
-                    <div id="red-button" class="col color-area color-btn">
-                    </div>
-                    <div id="blue-button" class="col color-area color-btn">
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="green-button" class="col color-area color-btn">
-                    </div>
-                    <div id="yellow-button" class="col color-area color-btn">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button id="start-button" class="disabled-button"></button>
-                        <!--<div id="blink-start"></div>-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="div">
-                        <div class="col">
+                <div id="color-button-area" class="col-6 my-col">
+                    <div class="row">
+                        <div id="red-button" class="col color-area color-btn">
                         </div>
-                        <div class="col">
-                            <div id="press-one"></div>
-                            <div id="press-two"></div>
-                            <div id="press-three"></div>
+                        <div id="blue-button" class="col color-area color-btn">
                         </div>
                     </div>
+                    <div class="row">
+                        <div id="green-button" class="col color-area color-btn">
+                        </div>
+                        <div id="yellow-button" class="col color-area color-btn">
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div id="feed-back" class="col footer"></textarea></div>
+                        <div class="col"><button id="start-button" class="disabled-button"><span
+                                    id="current-score-big">0</span></button></div>
+                        <div id="footer-info"class="col footer">
+                            <p>
+                                <br>
+                                Made by Karolis Fedorkinas for "Code Institute" milestone project 2. 2021-08-08
+                            </p>
+                        </div>
+                    </div>
+
+                <div id="high-score-area" class="col vertical-center">
+                    <button id="high-score-button" class="score-btn"><span id="high-score-big">0</span></button>
                 </div>
             </div>
-
-            <!-- Extreem mode selection -->
-            <div class="col d-none d-lg-block my-col">
-                <button class="mode-btn extriem">Extriem</button>
-            </div>
         </div>
     </div>
-
-    <div class="container score-container d-none d-md-block my-container">
-        <div class="row my-row">
-            <div class="col vertical-center my-col">
-                <p class="score-tag">Current Score <span id="current-score-big" class="score-holder">0</span></p>
-            </div>
-            <div class="col vertical-center my-col">
-                <p class="score-tag"><span id="high-score-big" class="score-holder">0</span> High Score</p>
-            </div>
-        </div>
-    </div>
-    <div class="container score-container d-block d-md-none my-container">
-        <div class="row ">
-            <div class="col vertical-center my-col">
-                <p class="score-tag"><br>Current Score<br><span id="current-score" class="score-holder">0</span></p>
-            </div>
-            <div class="col vertical-center my-col">
-                <p class="score-tag"><br>High Score<br><span id="high-score" class="score-holder">0</span></p>
-            </div>
-        </div>
-    </div>
-
-    <footer class="vertical-center my-container">
-        <p>
-            <br>
-            Made by Karolis Fedorkinas for "Code Institute" milestone project 2. 2021-08-08
-        </p>
-        <audio id="stomp">
-            <source src="assets/sound/stomp-1_short.mp3" type="audio/mp3">
-        </audio>
-        <p id="demo"></p>
-    </footer>
+    <audio id="stomp">
+        <source src="assets/sound/stomp-1_short.mp3" type="audio/mp3">
+    </audio>
+-->
 </body>
 
 </html>

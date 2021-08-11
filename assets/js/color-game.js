@@ -24,6 +24,7 @@ function startClick() {
         if (tutorial == false) {
             disableStart();
             startGame();
+            document.getElementById('current-score-big').innerHTML = '0';
         }
     });
 }
@@ -46,7 +47,8 @@ function startTutorial() {
 // Disables start button
 
 function disableStart() {
-    document.getElementById('start-button').style.backgroundColor = 'black';
+    document.getElementById('start-button').style.backgroundColor = 'white';
+    document.getElementById('start-button').style.color = 'black';
     document.getElementById('start-button').setAttribute('disabled', 'true');
 }
 
@@ -54,6 +56,7 @@ function disableStart() {
 
 function enableStart() {
     document.getElementById('start-button').style.backgroundColor = '';
+    document.getElementById('start-button').style.color = 'green';
     document.getElementById('start-button').removeAttribute('disabled');
     //document.getElementById('start-button').removeAttribute("disabled");
     //$(`#start-button`).prop('disabled', false);
@@ -238,6 +241,7 @@ function patternCheck(valueCheck, click) {
         disableColors();
         gameOwer = 1;
         document.getElementById('start-button').style.backgroundColor = 'red';
+        document.getElementById('start-button').style.color = 'white';
         setTimeout(function () {
             startGame();
         }, 1000);
@@ -250,8 +254,6 @@ function patternCheck(valueCheck, click) {
 // Functin to count curent games best performance
 
 function currentScore() {
-    let score = parseInt(document.getElementById('current-score').innerHTML);
-    document.getElementById('current-score').innerHTML = ++score;
     let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
     document.getElementById('current-score-big').innerHTML = ++scoreBg;
 }
@@ -259,17 +261,11 @@ function currentScore() {
 // Function to log highes score made
 
 function highScore() {
-    let score = parseInt(document.getElementById('current-score').innerHTML);
-    let highscore = parseInt(document.getElementById('high-score').innerHTML);
-    if (highscore < score) {
-        document.getElementById('high-score').innerHTML = score;
-    }
     let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
     let highscoreBg = parseInt(document.getElementById('high-score-big').innerHTML);
     if (highscoreBg < scoreBg) {
         document.getElementById('high-score-big').innerHTML = scoreBg;
     }
-    document.getElementById('current-score').innerHTML = 0;
 }
 
 // Blinks start button for the tutorial
