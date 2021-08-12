@@ -4,7 +4,7 @@
 /*                      My Styles                              */
 /*-------------------------------------------------------------*/
 
-
+/*
 .my-container {
     border: 2px solid black;
 }
@@ -16,6 +16,7 @@
 .my-col {
     border: 2px solid blue;
 }
+*/
 
 /*-------------------------------------------------------------*/
 /*                     Global styles                           */
@@ -59,18 +60,28 @@ p {
     font-size: 150px;
     color: #000;
 
-    margin-top: 55px;
+    margin-top: 35px;
 }
 
 .main-modes-icons:hover {
     color: #fff;
 }
 
+#reset-button {
+    position: relative;
+    right: -40%;
+}
+
+#turorial-icon {
+    position: relative;
+    right: 40%;
+}
+
 /*-------------------------------------------------------------*/
 /*                        Game Area                            */
 /*-------------------------------------------------------------*/
 
-#start-button {
+.startButton {
     background-color: green;
 
     width: 150px;
@@ -83,6 +94,11 @@ p {
     z-index: 500;
     float: right;
     top: 252px;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 52px;
+    color: green;
 }
 
 .color-area {
@@ -101,7 +117,7 @@ p {
     ;
 }
 
-#red-button {
+.redButton {
     border-width: 35px 10px 10px 35px;
     border-top-left-radius: 210px;
 
@@ -110,7 +126,7 @@ p {
     background-color: #ab0a0a;
 }
 
-#blue-button {
+.blueButton {
     border-width: 35px 35px 10px 10px;
     border-top-right-radius: 210px;
 
@@ -119,60 +135,21 @@ p {
     background-color: #080694;
 }
 
-#green-button {
+.greenButton {
     border-width: 10px 10px 35px 35px;
     border-bottom-left-radius: 210px;
 
     background-color: #096315;
 }
 
-#yellow-button {
+.yellowButton {
     border-width: 10px 35px 35px 10px;
     border-bottom-right-radius: 210px;
 
     background-color: #979908;
 }
 
-button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 52px;
-}
-
-/*------------------- Game color area for small screens --------------------*/
-@media screen and (max-width: 600px) {
-    #color-button-area {
-        width: 350px;
-        height: 350px;
-    }
-
-    .color-area {
-        width: 175px;
-        height: 175px;
-    }
-
-    #red-button {
-        border-width: 10px 5px 5px 10px;
-        border-top-left-radius: 175px;
-    }
-
-    #blue-button {
-        border-width: 10px 10px 5px 5px;
-        border-top-right-radius: 175px;
-    }
-
-    #green-button {
-        border-width: 5px 5px 10px 10px;
-        border-bottom-left-radius: 175px;
-    }
-
-    #yellow-button {
-        border-width: 5px 10px 10px 5px;
-        border-bottom-right-radius: 175px;
-    }
-}
-
-/*------------------- Mode buttons --------------------*/
+/*------------------- Mode and highscore buttons --------------------*/
 
 .button-are {
     background-color: #000;
@@ -192,60 +169,21 @@ button {
 
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
+    font-size: 52px;
     color: rgb(174, 168, 168);
 }
 
-.mode-btn:hover {
+.btns:hover {
     border: 5px solid #000;
 
     background-color: #e0a224;
     color: #000;
 }
-
-@media screen and (max-width: 1300px) {
-    .mode-btn {
-        margin-left: 10%;
-        font-size: 48px;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .mode-btn {
-        width: 150px;
-        height: 75px;
-        font-size: 32px;
-    }
-}
-
-@media screen and (max-width: 990px) {
-    .mode-btn {
-        margin: 10px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .mode-btn {
-        width: 100px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-
-/*-------------------------------------------------------------*/
-/*                        Score Area                           */
-/*-------------------------------------------------------------*/
 
 #high-score-area {
     background-color: orange;
     margin-right: -10px;
     height: 300px;
-}
-
-.score-btn:hover {
-    border: 5px solid #000;
-
-    background-color: #e0a224;
-    color: #000;
 }
 
 /*-------------------------------------------------------------*/
@@ -288,11 +226,300 @@ button {
 }
 
 /*-------------------------------------------------------------*/
-/*             Screen width below 1295px                       */
+/*                    Small screens                            */
 /*-------------------------------------------------------------*/
 
-@media screen and (max-width: 1295px) {
+@media screen and (max-width: 1055px) {
 
-    #start-button {
+    .btns {
+        margin-top: 45px;
+
+        width: 200px;
+        height: 100px;
+
+        font-size: 42px;
+    }
+
+    .main-modes-icons {
+        margin-top: 55px;
+
+        font-size: 100px;
+        color: #000;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .startButton {
+        width: 100px;
+        height: 100px;
+
+        top: 282px;
+
+        font-size: 38px;
+    }
+
+    .color-area {
+        max-width: 175px;
+        height: 175px;
+    }
+
+    .color-btn {
+        position: relative;
+        z-index: 400;
+        float: right;
+        right: 0%;
+        top: 50px;
+    }
+
+    .redButton {
+        border-top-left-radius: 175px;
+    }
+
+    .blueButton {
+        border-top-right-radius: 175px;
+    }
+
+    .greenButton {
+        border-bottom-left-radius: 175px;
+    }
+
+    .yellowButton {
+        border-bottom-right-radius: 175px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .show-big-screen {
+        display: none;
+    }
+
+    .startButton {
+        background-color: green;
+    
+        width: 95px;
+        height: 95px;
+        border-width: 15px;
+    
+        right: 0%;
+        top: 57px;
+    
+        font-weight: 500;
+        font-size: 36px;
+    }
+    
+    .color-area {
+        max-width: 175px;
+        height: 175px;
+    }
+    
+    .small-color-btn {
+        position: relative;
+        z-index: 400;
+        float: right;
+        right: 0%;
+        top: -175px;
+    }
+    
+    .redButton {
+        border-width: 15px 10px 10px 15px;
+        border-top-left-radius: 175px;
+    }
+    
+    .blueButton {
+        border-width: 15px 15px 10px 10px;
+        border-top-right-radius: 175px;
+    }
+    
+    .greenButton {
+        border-width: 10px 10px 15px 15px;
+        border-bottom-left-radius: 175px;
+    }
+    
+    .yellowButton {
+        border-width: 10px 15px 15px 10px;
+        border-bottom-right-radius: 175px;
+    }
+}
+
+@media screen and (min-width: 899.98px) {
+
+    .show-small-screen {
+        display: none;
+    }
+}
+
+#bar-button {
+    border: none;
+    background-color: transparent;
+
+    height: 100px;
+
+    padding: 0;
+}
+
+#small-turorial-icon {
+    font-size: 150px;
+    color: rgb(174, 168, 168);
+
+    background-color: #000;
+
+    border: 5px solid rgb(174, 168, 168);
+    border-radius: 50%;
+
+    margin-top: 0px;
+}
+
+#small-turorial-icon:hover {
+    border: 5px solid #000;
+
+    background-color: #fff;
+    color: #000;
+}
+
+#small-mode-button {
+    width: 250px;
+    height: 125px;
+
+    border: 5px solid rgb(174, 168, 168);
+    border-radius: 50px;
+
+    background-color: #000;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 52px;
+    color: rgb(174, 168, 168);
+}
+
+#small-mode-button:hover {
+    border: 5px solid #000;
+    border-radius: 50px;
+
+    background-color: #fff;
+    color: #000;
+}
+
+#small-high-score-button {
+    width: 150px;
+    height: 75px;
+
+    border: 5px solid rgb(174, 168, 168);
+    border-radius: 50px;
+
+    background-color: #000;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 38px;
+    color: rgb(174, 168, 168);
+}
+
+@media screen and (max-width: 750px) {
+
+    .main-modes-icons {
+        font-size: 50px;
+    }
+
+    #reset-button {
+        margin-top: 75px;
+        right: 0%;
+    }
+
+    #small-turorial-icon {
+        font-size: 150px;
+        color: rgb(174, 168, 168);
+    
+        background-color: #000;
+    
+        border: 5px solid rgb(174, 168, 168);
+        border-radius: 50%;
+    
+        margin-top: 0px;
+    }
+    
+    #small-turorial-icon:hover {
+        border: 5px solid #000;
+    
+        background-color: #fff;
+        color: #000;
+    }
+    
+    #small-mode-button {
+        width: 250px;
+        height: 125px;
+    
+        border: 5px solid rgb(174, 168, 168);
+        border-radius: 50px;
+    
+        background-color: #000;
+    
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 52px;
+        color: rgb(174, 168, 168);
+    }
+    
+    #small-mode-button:hover {
+        border: 5px solid #000;
+        border-radius: 50px;
+    
+        background-color: #fff;
+        color: #000;
+    }
+    
+    #small-high-score-button {
+        width: 90px;
+        height: 45px;
+
+        font-size: 28px;
+    }
+
+    .startButton {
+        background-color: green;
+    
+        width: 75px;
+        height: 75px;
+        border-width: 8px;
+    
+        right: 0%;
+        top: 55px;
+    
+        font-weight: 500;
+        font-size: 36px;
+    }
+    
+    .color-area {
+        max-width: 125px;
+        height: 125px;
+    }
+    
+    .small-color-btn {
+        position: relative;
+        z-index: 400;
+        float: right;
+        right: 0%;
+        top: -120px;
+        ;
+    }
+    
+    .redButton {
+        border-width: 10px 5px 5px 10px;
+        border-top-left-radius: 125px;
+    }
+    
+    .blueButton {
+        border-width: 10px 10px 5px 5px;
+        border-top-right-radius: 125px;
+    }
+    
+    .greenButton {
+        border-width: 5px 5px 10px 10px;
+        border-bottom-left-radius: 125px;
+    }
+    
+    .yellowButton {
+        border-width: 5px 10px 10px 5px;
+        border-bottom-right-radius: 125px;
     }
 }

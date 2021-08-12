@@ -26,56 +26,112 @@
 
     <div id="main-container" class="container-fluid my-container">
         <div id="main-modes" class="row my-row">
-            <div class="col vertical-center my-col">
-                <i class="fas fa-gamepad main-modes-icons"></i>
+            <div class="col d-flex justify-content-center my-col">
+                <span><i id="reset-button" class="fas fa-gamepad main-modes-icons"></i></span>
             </div>
-            <div class="col-6 my-col">
+            <div class="col-6 show-big-screen my-col">
                 <div class="row d-flex justify-content-center my-row">
                     <div class="col d-flex justify-content-center my-col">
-                        <button id="start-button" class="disabled-button"><span
-                            id="current-score-big">0</span></button>
+                        <button id="start-button" class="startButton"><span id="current-score-big">0</span></button>
                     </div>
                 </div>
                 <div class="row my-row">
                     <div class="col my-col">
                         <div class="row d-flex justify-content-center">
-                            <div id="red-button" class="col color-area color-btn">
+                            <div id="red-button" class="col color-area color-btn redButton">
                             </div>
-                            <div id="blue-button" class="col color-area color-btn">
+                            <div id="blue-button" class="col color-area color-btn blueButton">
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
-                            <div id="green-button" class="col color-area color-btn">
+                            <div id="green-button" class="col color-area color-btn greenButton">
                             </div>
-                            <div id="yellow-button" class="col color-area color-btn">
+                            <div id="yellow-button" class="col color-area color-btn yellowButton">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col vertical-center my-col">
-                <i id="turorial-icon" class="far fa-question-circle main-modes-icons"></i>
+            <div class="col d-flex justify-content-center my-col">
+                <span class="show-big-screen"><i id="turorial-icon"
+                        class="far fa-question-circle main-modes-icons d-flex"></i></span>
+                <span><button id="bar-button" class="show-small-screen main-modes-icons d-flex align-items-center"
+                        data-bs-toggle="modal" data-bs-target="#mode-tutorial">
+                        <i id="bar-icon" class="fas fa-bars show-small-screen"></i>
+                    </button></span>
             </div>
         </div>
 
         <div class="row button-are my-row">
-            <div class="col vertical-center my-col">
-                <button class="mode-btn btns">Medium</button>
+            <div class="col show-big-screen vertical-center my-col">
+                <button class="mode-btn btns show-big-screen">Clasic</button>
             </div>
-            <div class="col my-col"></div>
-            <div class="col vertical-center my-col">
-                <button id="high-score-button" class="score-btn btns"><span id="high-score-big">0</span></button>
+            <div class="col my-col">
+                <div class="row show-small-screen d-flex justify-content-center my-row">
+                    <div class="col d-flex justify-content-center my-col">
+                        <button id="small-start-button" class="startButton show-small-screen"><span
+                                id="small-current-score">0</span></button>
+                    </div>
+                </div>
+                <div class="row show-small-screen my-row">
+                    <div class="col my-col">
+                        <div class="row d-flex justify-content-center">
+                            <div id="small-red-button" class="col color-area small-color-btn redButton">
+                            </div>
+                            <div id="small-blue-button" class="col color-area small-color-btn blueButton">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div id="small-green-button" class="col color-area small-color-btn greenButton">
+                            </div>
+                            <div id="small-yellow-button" class="col color-area small-color-btn yellowButton">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col show-big-screen vertical-center my-col">
+                <button id="high-score-button" class="score-btn btns show-big-screen"><span
+                        id="high-score-big">0</span></button>
             </div>
         </div>
 
         <div id="footer" class="row my-row">
             <div class="col my-col"></div>
-            <div class="col my-col"></div>
+            <div class="col d-flex justify-content-center align-items-center my-col">
+                <button id="small-high-score-button" class="score-btn show-small-screen"><span
+                        id="small-high-score">0</span></button>
+            </div>
         </div>
     </div>
     <audio id="stomp">
         <source src="assets/sound/stomp-1_short.mp3" type="audio/mp3">
     </audio>
+
+    <div class="modal fade" id="mode-tutorial" tabindex="-1" aria-labelledby="mode-tutorial-Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mode-tutorial-Label">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row my-row">
+                        <div class="col d-flex justify-content-center align-items-center my-col">
+                            <button id="small-mode-button" class="mode-btn">Clasic</button>
+                        </div>
+                        <div class="col my-col d-flex justify-content-center align-items-center"><span><i
+                                    id="small-turorial-icon" class="far fa-question-circle"
+                                    data-bs-dismiss="modal"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!--

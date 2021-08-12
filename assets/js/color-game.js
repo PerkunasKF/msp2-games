@@ -27,10 +27,30 @@ function startClick() {
             document.getElementById('current-score-big').innerHTML = '0';
         }
     });
+    $('#small-start-button').off().on('click', function () {
+        if (tutorial == false) {
+            disableStart();
+            startGame();
+            document.getElementById('current-score-big').innerHTML = '0';
+        }
+    });
 }
 
 function startTutorial() {
     document.getElementById('turorial-icon').addEventListener('click', function () {
+        document.getElementById('current-score-big').innerHTML = '';
+        cycle = 0;
+        cycleMemmory = [];
+        gameOwer = 0;
+        tutorial = true;
+        redClick = false;
+        blueClick = false;
+        greenClick = false;
+        enableStart();
+        AnimationIncres();
+    });
+    document.getElementById('small-turorial-icon').addEventListener('click', function () {
+        document.getElementById('current-score-big').innerHTML = '';
         cycle = 0;
         cycleMemmory = [];
         gameOwer = 0;
@@ -50,14 +70,22 @@ function disableStart() {
     document.getElementById('start-button').style.backgroundColor = 'white';
     document.getElementById('start-button').style.color = 'black';
     document.getElementById('start-button').setAttribute('disabled', 'true');
+
+    document.getElementById('small-start-button').style.backgroundColor = 'white';
+    document.getElementById('small-start-button').style.color = 'black';
+    document.getElementById('small-start-button').setAttribute('disabled', 'true');
 }
 
 // Enable start button
 
 function enableStart() {
     document.getElementById('start-button').style.backgroundColor = '';
-    document.getElementById('start-button').style.color = 'green';
+    document.getElementById('start-button').style.color = '';
     document.getElementById('start-button').removeAttribute('disabled');
+
+    document.getElementById('small-start-button').style.backgroundColor = '';
+    document.getElementById('small-start-button').style.color = '';
+    document.getElementById('small-start-button').removeAttribute('disabled');
     //document.getElementById('start-button').removeAttribute("disabled");
     //$(`#start-button`).prop('disabled', false);
     //document.getElementById('start-button').removeAttribute('disabled');
@@ -71,6 +99,11 @@ function disableColors() {
     document.getElementById('blue-button').style.pointerEvents = 'none';
     document.getElementById('green-button').style.pointerEvents = 'none';
     document.getElementById('yellow-button').style.pointerEvents = 'none';
+
+    document.getElementById('small-red-button').style.pointerEvents = 'none';
+    document.getElementById('small-blue-button').style.pointerEvents = 'none';
+    document.getElementById('small-green-button').style.pointerEvents = 'none';
+    document.getElementById('small-yellow-button').style.pointerEvents = 'none';
 }
 
 // Enables color buttons
@@ -80,6 +113,11 @@ function enableColors() {
     document.getElementById('blue-button').style.pointerEvents = 'auto';
     document.getElementById('green-button').style.pointerEvents = 'auto';
     document.getElementById('yellow-button').style.pointerEvents = 'auto';
+
+    document.getElementById('small-red-button').style.pointerEvents = 'auto';
+    document.getElementById('small-blue-button').style.pointerEvents = 'auto';
+    document.getElementById('small-green-button').style.pointerEvents = 'auto';
+    document.getElementById('small-yellow-button').style.pointerEvents = 'auto';
 }
 
 // Generates random numbers from 1 to 4 and counts cycles.
@@ -112,23 +150,29 @@ function colorPaternBlink() {
         setTimeout(function () {
             if (colorNum == 1) {
                 document.getElementById('red-button').style.backgroundColor = '#ff2b1c';
+                document.getElementById('small-red-button').style.backgroundColor = '#ff2b1c';
                 clickSound();
             }
             if (colorNum == 2) {
                 document.getElementById('blue-button').style.backgroundColor = '#1ca0ff';
+                document.getElementById('small-blue-button').style.backgroundColor = '#1ca0ff';
                 clickSound();
             }
             if (colorNum == 3) {
                 document.getElementById('green-button').style.backgroundColor = '#1cff91';
+                document.getElementById('small-green-button').style.backgroundColor = '#1cff91';
                 clickSound();
             }
             if (colorNum == 4) {
                 document.getElementById('yellow-button').style.backgroundColor = '#fff41c';
+                document.getElementById('small-yellow-button').style.backgroundColor = '#fff41c';
                 clickSound();
             }
             setTimeout(function () {
                 let colorBtn = document.getElementsByClassName('color-btn');
                 colorBtn[colorNum - 1].style.backgroundColor = '';
+                let colorBtnSmall = document.getElementsByClassName('small-color-btn');
+                colorBtnSmall[colorNum - 1].style.backgroundColor = '';
                 blink++;
 
                 if (cycle == blink) {
@@ -222,6 +266,74 @@ function colorClickBlink() {
             document.getElementById('yellow-button').style.backgroundColor = '';
         }, 150);
     });
+
+    $('#small-red-button').off().on('click', function () {
+        document.getElementById('small-red-button').style.backgroundColor = '#ff2b1c';
+        clickSound();
+        colorValue = 1;
+        colorPattern.push(colorValue);
+        click++;
+        if (tutorial == false) {
+            patternCheck(colorPattern, click);
+        }
+        if (tutorial == true) {
+            turorialCheck(colorPattern, click);
+        }
+        setTimeout(function () {
+            document.getElementById('small-red-button').style.backgroundColor = '';
+        }, 150);
+    });
+
+    $('#small-blue-button').off().on('click', function () {
+        document.getElementById('small-blue-button').style.backgroundColor = '#1ca0ff';
+        clickSound();
+        colorValue = 2;
+        colorPattern.push(colorValue);
+        click++;
+        if (tutorial == false) {
+            patternCheck(colorPattern, click);
+        }
+        if (tutorial == true) {
+            turorialCheck(colorPattern, click);
+        }
+        setTimeout(function () {
+            document.getElementById('small-blue-button').style.backgroundColor = '';
+        }, 150);
+    });
+
+    $('#small-green-button').off().on('click', function () {
+        document.getElementById('small-green-button').style.backgroundColor = '#1cff91';
+        clickSound();
+        colorValue = 3;
+        colorPattern.push(colorValue);
+        click++;
+        if (tutorial == false) {
+            patternCheck(colorPattern, click);
+        }
+        if (tutorial == true) {
+            turorialCheck(colorPattern, click);
+        }
+        setTimeout(function () {
+            document.getElementById('small-green-button').style.backgroundColor = '';
+        }, 150);
+    });
+
+    $('#small-yellow-button').off().on('click', function () {
+        document.getElementById('small-yellow-button').style.backgroundColor = '#fff41c';
+        clickSound();
+        colorValue = 4;
+        colorPattern.push(colorValue);
+        click++;
+        if (tutorial == false) {
+            patternCheck(colorPattern, click);
+        }
+        if (tutorial == true) {
+            turorialCheck(colorPattern, click);
+        }
+        setTimeout(function () {
+            document.getElementById('small-yellow-button').style.backgroundColor = '';
+        }, 150);
+    });
 }
 
 // Checks if the player is clicking colors in the right pattern
@@ -242,6 +354,8 @@ function patternCheck(valueCheck, click) {
         gameOwer = 1;
         document.getElementById('start-button').style.backgroundColor = 'red';
         document.getElementById('start-button').style.color = 'white';
+        document.getElementById('small-start-button').style.backgroundColor = 'red';
+        document.getElementById('small-start-button').style.color = 'white';
         setTimeout(function () {
             startGame();
         }, 1000);
@@ -256,6 +370,9 @@ function patternCheck(valueCheck, click) {
 function currentScore() {
     let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
     document.getElementById('current-score-big').innerHTML = ++scoreBg;
+
+    let scoreSm = parseInt(document.getElementById('small-current-score').innerHTML);
+    document.getElementById('small-current-score').innerHTML = ++scoreSm;
 }
 
 // Function to log highes score made
@@ -266,6 +383,12 @@ function highScore() {
     if (highscoreBg < scoreBg) {
         document.getElementById('high-score-big').innerHTML = scoreBg;
     }
+
+    let highscoreSm = parseInt(document.getElementById('small-high-score').innerHTML);
+    if (highscoreSm < scoreBg) {
+        document.getElementById('small-high-score').innerHTML = scoreBg;
+    }
+    console.log(highscoreSm);
 }
 
 // Blinks start button for the tutorial
@@ -281,12 +404,19 @@ function AnimationIncres() {
                     turorialColorBlink();
                     disableStart();
                 });
+                $('#small-start-button').off().on('click', function () {
+                    disableStartBlink = true;
+                    turorialColorBlink();
+                    disableStart();
+                });
             }
             if (Number.isInteger(i / 2) && disableStartBlink == false) {
                 document.getElementById('start-button').style.borderColor = '#fff';
+                document.getElementById('small-start-button').style.borderColor = '#fff';
             } else {
                 if (disableStartBlink == false)
                     document.getElementById('start-button').style.borderColor = '';
+                    document.getElementById('small-start-button').style.borderColor = '';
             }
         }, 400 * i);
     }
@@ -298,24 +428,30 @@ function turorialColorBlink() {
     let button = 1;
 
     document.getElementById('start-button').style.borderColor = '';
+    document.getElementById('small-start-button').style.borderColor = '';
 
     for (let i = 0; i < colorNum.length; ++i) {
         setTimeout(function () {
             if (colorNum[i] == 1) {
                 document.getElementById('red-button').style.backgroundColor = '#ff2b1c';
+                document.getElementById('small-red-button').style.backgroundColor = '#ff2b1c';
                 clickSound();
             }
             if (colorNum[i] == 2) {
                 document.getElementById('blue-button').style.backgroundColor = '#1ca0ff';
+                document.getElementById('small-blue-button').style.backgroundColor = '#1ca0ff';
                 clickSound();
             }
             if (colorNum[i] == 3) {
                 document.getElementById('green-button').style.backgroundColor = '#1cff91';
+                document.getElementById('small-green-button').style.backgroundColor = '#1cff91';
                 clickSound();
             }
             setTimeout(function () {
                 let colorBtn = document.getElementsByClassName('color-btn');
                 colorBtn[i].style.backgroundColor = '';
+                let colorBtnSmall = document.getElementsByClassName('small-color-btn');
+                colorBtnSmall[i].style.backgroundColor = '';
                 if (colorNum[i] == 3) {
                     colorRepeat = true;
                     if (colorRepeat == true) {
@@ -328,23 +464,29 @@ function turorialColorBlink() {
                                     let inte = Number.isInteger(i / 2);
                                     if (inte == true && button == 1 && redClick == false) {
                                         document.getElementById('red-button').style.borderColor = '#fff';
+                                        document.getElementById('small-red-button').style.borderColor = '#fff';
                                     } else {
                                         if (inte == false && redClick == false) {
                                             document.getElementById('red-button').style.borderColor = '';
+                                            document.getElementById('small-red-button').style.borderColor = '';
                                         }
                                     }
                                     if (inte == true && button == 3 && blueClick == false) {
                                         document.getElementById('blue-button').style.borderColor = '#fff';
+                                        document.getElementById('small-blue-button').style.borderColor = '#fff';
                                     } else {
                                         if (inte == false && blueClick == false) {
                                             document.getElementById('blue-button').style.borderColor = '';
+                                            document.getElementById('small-blue-button').style.borderColor = '';
                                         }
                                     }
                                     if (inte == true && button == 5 && greenClick == false) {
                                         document.getElementById('green-button').style.borderColor = '#fff';
+                                        document.getElementById('small-green-button').style.borderColor = '#fff';
                                     } else {
                                         if (inte == false && greenClick == false) {
                                             document.getElementById('green-button').style.borderColor = '';
+                                            document.getElementById('small-green-button').style.borderColor = '';
                                         }
                                     }
                                     button++;
