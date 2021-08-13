@@ -11,7 +11,7 @@ var greenClick = false;
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Pakrautas');
     startClick();
-    startTutorial();
+    //startTutorial();
 })
 
 function startClick() {
@@ -36,7 +36,7 @@ function startClick() {
     });
 }
 
-function startTutorial() {
+/*function startTutorial() {
     document.getElementById('turorial-icon').addEventListener('click', function () {
         document.getElementById('current-score-big').innerHTML = '';
         cycle = 0;
@@ -46,8 +46,8 @@ function startTutorial() {
         redClick = false;
         blueClick = false;
         greenClick = false;
-        enableStart();
-        AnimationIncres();
+        disableStart();
+        tutorialExplain();
     });
     document.getElementById('small-turorial-icon').addEventListener('click', function () {
         document.getElementById('current-score-big').innerHTML = '';
@@ -61,7 +61,7 @@ function startTutorial() {
         enableStart();
         AnimationIncres();
     });
-}
+}*/
 
 
 // Disables start button
@@ -393,7 +393,7 @@ function highScore() {
 
 // Blinks start button for the tutorial
 
-function AnimationIncres() {
+/*function AnimationIncres() {
     disableStartBlink = false;
 
     for (let i = 0; i < 1000; i++) {
@@ -519,7 +519,7 @@ function turorialCheck(valueCheck, click) {
             }
         }, 500);
     }
-}
+}*/
 
 // --------------------------------------------------------------------
 

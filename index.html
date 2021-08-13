@@ -52,9 +52,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center my-col">
+            <div id="turorial-box-2" class="col d-flex justify-content-center my-col">
                 <span class="show-big-screen"><i id="turorial-icon"
-                        class="far fa-question-circle main-modes-icons d-flex"></i></span>
+                        class="far fa-question-circle main-modes-icons d-flex" data-bs-toggle="modal"
+                        data-bs-target="#big-mode-tutorial"></i></span>
                 <span><button id="bar-button" class="show-small-screen main-modes-icons d-flex align-items-center"
                         data-bs-toggle="modal" data-bs-target="#mode-tutorial">
                         <i id="bar-icon" class="fas fa-bars show-small-screen"></i>
@@ -117,14 +118,48 @@
                 </div>
                 <div class="modal-body">
                     <div class="row my-row">
-                        <div class="col d-flex justify-content-center align-items-center my-col">
+                        <div class="col my-col d-flex justify-content-center align-items-center model-buttons"><span><i
+                                    id="small-turorial-icon" class="far fa-question-circle" data-bs-toggle="modal"
+                                    data-bs-target="#big-mode-tutorial" data-bs-dismiss="modal"></i></span>
+                        </div>
+                        <div class="col d-flex justify-content-center align-items-center model-buttons my-col">
                             <button id="small-mode-button" class="mode-btn">Clasic</button>
                         </div>
-                        <div class="col my-col d-flex justify-content-center align-items-center"><span><i
-                                    id="small-turorial-icon" class="far fa-question-circle"
-                                    data-bs-dismiss="modal"></i></span>
-                        </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="big-mode-tutorial" tabindex="-1" aria-labelledby="big-mode-tutorial-Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="big-mode-tutorial-Label">Tutorial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="tutorial-explanations">
+                        <li><i class="fas fa-gamepad explanation-icons"></i> - Click this icon to reset the game.</li>
+                        <li><i class="far fa-question-circle explanation-icons"></i> - Click this icon to get tutorial
+                            explanations.</li>
+                        <li><button class="tutorial-btns">Clasic</button> - Click this butto to change
+                            game mode. Classic shows same patter witch gets longer after correct clicks.</li>
+                        <li><button class="tutorial-btns">Extriem</button> - Click this butto to change
+                            game mode. Extriem mode changes color pattern and makes it longer after corect clicks.</li>
+                        <li><button class="tutorial-btns">0</button> - Button on the roght side of the screen
+                            shows your high score on click shows top 10 highs scores made.</li>
+                        <li><button class="tutorial-start"></button> - Click this button to start the game. On click you
+                            will start to see your
+                            current score and the color patter will start.</li>
+                        <li>Color will blink in a pattern. You must repeat the pattern witch will get longer and longer.
+                            The game is infinit, how long can you go?</li>
+                        <li> - Click this icon to send some feedback.</li>
+                    </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
