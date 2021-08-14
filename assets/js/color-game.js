@@ -369,6 +369,18 @@ function modeSwich() {
             startClick();
         }
     });
+
+    document.getElementById('small-mode-button').addEventListener('click', function () {
+        if (classic == true) {
+            document.getElementById('small-mode-button').innerHTML = 'Extriem';
+            classic = false;
+            startClick();
+        } else {
+            document.getElementById('small-mode-button').innerHTML = 'Classic';
+            classic = true;
+            startClick();
+        }
+    });
 }
 
 // Blinks start button for the tutorial
