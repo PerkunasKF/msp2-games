@@ -3,15 +3,12 @@
 var cycle = 0;
 var cycleMemmory = [];
 var gameOwer = 0;
-var tutorial = false;
-var redClick = false;
-var blueClick = false;
-var greenClick = false;
+var classic = true;
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Pakrautas');
     startClick();
-    //startTutorial();
+    modeSwich();
 })
 
 function startClick() {
@@ -21,18 +18,14 @@ function startClick() {
     enableStart();
     disableColors();
     $('#start-button').off().on('click', function () {
-        if (tutorial == false) {
-            disableStart();
-            startGame();
-            document.getElementById('current-score-big').innerHTML = '0';
-        }
+        disableStart();
+        startGame();
+        document.getElementById('current-score-big').innerHTML = '0';
     });
     $('#small-start-button').off().on('click', function () {
-        if (tutorial == false) {
-            disableStart();
-            startGame();
-            document.getElementById('current-score-big').innerHTML = '0';
-        }
+        disableStart();
+        startGame();
+        document.getElementById('current-score-big').innerHTML = '0';
     });
 }
 
@@ -123,10 +116,22 @@ function enableColors() {
 // Generates random numbers from 1 to 4 and counts cycles.
 
 function startGame() {
-    let randomNum = Math.floor(Math.random() * 4) + 1;
+    let randomNum = 0;
+    console.log(classic);
+
     if (gameOwer == 0) {
-        cycleMemmory.push(randomNum);
-        cycle++;
+        if (classic == true) {
+            randomNum = Math.floor(Math.random() * 4) + 1;
+            cycleMemmory.push(randomNum);
+            cycle++;
+        } else {
+            cycleMemmory = [];
+            for (; cycle >= cycleMemmory.length;) {
+                randomNum = Math.floor(Math.random() * 4) + 1;
+                cycleMemmory.push(randomNum);
+            }
+            cycle++;
+        }
     }
 
     //Test
@@ -205,12 +210,7 @@ function colorClickBlink() {
         colorValue = 1;
         colorPattern.push(colorValue);
         click++;
-        if (tutorial == false) {
-            patternCheck(colorPattern, click);
-        }
-        if (tutorial == true) {
-            turorialCheck(colorPattern, click);
-        }
+        patternCheck(colorPattern, click);
         setTimeout(function () {
             document.getElementById('red-button').style.backgroundColor = '';
         }, 150);
@@ -222,118 +222,83 @@ function colorClickBlink() {
         colorValue = 2;
         colorPattern.push(colorValue);
         click++;
-        if (tutorial == false) {
-            patternCheck(colorPattern, click);
-        }
-        if (tutorial == true) {
-            turorialCheck(colorPattern, click);
-        }
+        patternCheck(colorPattern, click);
         setTimeout(function () {
-            document.getElementById('blue-button').style.backgroundColor = '';
-        }, 150);
-    });
+        document.getElementById('blue-button').style.backgroundColor = '';
+    }, 150);
+});
 
-    $('#green-button').off().on('click', function () {
-        document.getElementById('green-button').style.backgroundColor = '#1cff91';
-        clickSound();
-        colorValue = 3;
-        colorPattern.push(colorValue);
-        click++;
-        if (tutorial == false) {
-            patternCheck(colorPattern, click);
-        }
-        if (tutorial == true) {
-            turorialCheck(colorPattern, click);
-        }
-        setTimeout(function () {
-            document.getElementById('green-button').style.backgroundColor = '';
-        }, 150);
-    });
+$('#green-button').off().on('click', function () {
+    document.getElementById('green-button').style.backgroundColor = '#1cff91';
+    clickSound();
+    colorValue = 3;
+    colorPattern.push(colorValue);
+    click++;
+    patternCheck(colorPattern, click);
+    setTimeout(function () {
+        document.getElementById('green-button').style.backgroundColor = '';
+    }, 150);
+});
 
-    $('#yellow-button').off().on('click', function () {
-        document.getElementById('yellow-button').style.backgroundColor = '#fff41c';
-        clickSound();
-        colorValue = 4;
-        colorPattern.push(colorValue);
-        click++;
-        if (tutorial == false) {
-            patternCheck(colorPattern, click);
-        }
-        if (tutorial == true) {
-            turorialCheck(colorPattern, click);
-        }
-        setTimeout(function () {
-            document.getElementById('yellow-button').style.backgroundColor = '';
-        }, 150);
-    });
+$('#yellow-button').off().on('click', function () {
+    document.getElementById('yellow-button').style.backgroundColor = '#fff41c';
+    clickSound();
+    colorValue = 4;
+    colorPattern.push(colorValue);
+    click++;
+    patternCheck(colorPattern, click);
+    setTimeout(function () {
+        document.getElementById('yellow-button').style.backgroundColor = '';
+    }, 150);
+});
 
-    $('#small-red-button').off().on('click', function () {
-        document.getElementById('small-red-button').style.backgroundColor = '#ff2b1c';
-        clickSound();
-        colorValue = 1;
-        colorPattern.push(colorValue);
-        click++;
-        if (tutorial == false) {
-            patternCheck(colorPattern, click);
-        }
-        if (tutorial == true) {
-            turorialCheck(colorPattern, click);
-        }
-        setTimeout(function () {
-            document.getElementById('small-red-button').style.backgroundColor = '';
-        }, 150);
-    });
+$('#small-red-button').off().on('click', function () {
+    document.getElementById('small-red-button').style.backgroundColor = '#ff2b1c';
+    clickSound();
+    colorValue = 1;
+    colorPattern.push(colorValue);
+    click++;
+    patternCheck(colorPattern, click);
+    setTimeout(function () {
+        document.getElementById('small-red-button').style.backgroundColor = '';
+    }, 150);
+});
 
-    $('#small-blue-button').off().on('click', function () {
-        document.getElementById('small-blue-button').style.backgroundColor = '#1ca0ff';
-        clickSound();
-        colorValue = 2;
-        colorPattern.push(colorValue);
-        click++;
-        if (tutorial == false) {
-            patternCheck(colorPattern, click);
-        }
-        if (tutorial == true) {
-            turorialCheck(colorPattern, click);
-        }
-        setTimeout(function () {
-            document.getElementById('small-blue-button').style.backgroundColor = '';
-        }, 150);
-    });
+$('#small-blue-button').off().on('click', function () {
+    document.getElementById('small-blue-button').style.backgroundColor = '#1ca0ff';
+    clickSound();
+    colorValue = 2;
+    colorPattern.push(colorValue);
+    click++;
+    patternCheck(colorPattern, click);
+    setTimeout(function () {
+        document.getElementById('small-blue-button').style.backgroundColor = '';
+    }, 150);
+});
 
-    $('#small-green-button').off().on('click', function () {
-        document.getElementById('small-green-button').style.backgroundColor = '#1cff91';
-        clickSound();
-        colorValue = 3;
-        colorPattern.push(colorValue);
-        click++;
-        if (tutorial == false) {
-            patternCheck(colorPattern, click);
-        }
-        if (tutorial == true) {
-            turorialCheck(colorPattern, click);
-        }
-        setTimeout(function () {
-            document.getElementById('small-green-button').style.backgroundColor = '';
-        }, 150);
-    });
+$('#small-green-button').off().on('click', function () {
+    document.getElementById('small-green-button').style.backgroundColor = '#1cff91';
+    clickSound();
+    colorValue = 3;
+    colorPattern.push(colorValue);
+    click++;
+    patternCheck(colorPattern, click);
+    setTimeout(function () {
+        document.getElementById('small-green-button').style.backgroundColor = '';
+    }, 150);
+});
 
-    $('#small-yellow-button').off().on('click', function () {
-        document.getElementById('small-yellow-button').style.backgroundColor = '#fff41c';
-        clickSound();
-        colorValue = 4;
-        colorPattern.push(colorValue);
-        click++;
-        if (tutorial == false) {
-            patternCheck(colorPattern, click);
-        }
-        if (tutorial == true) {
-            turorialCheck(colorPattern, click);
-        }
-        setTimeout(function () {
-            document.getElementById('small-yellow-button').style.backgroundColor = '';
-        }, 150);
-    });
+$('#small-yellow-button').off().on('click', function () {
+    document.getElementById('small-yellow-button').style.backgroundColor = '#fff41c';
+    clickSound();
+    colorValue = 4;
+    colorPattern.push(colorValue);
+    click++;
+    patternCheck(colorPattern, click);
+    setTimeout(function () {
+        document.getElementById('small-yellow-button').style.backgroundColor = '';
+    }, 150);
+});
 }
 
 // Checks if the player is clicking colors in the right pattern
@@ -389,6 +354,21 @@ function highScore() {
         document.getElementById('small-high-score').innerHTML = scoreBg;
     }
     console.log(highscoreSm);
+}
+
+function modeSwich() {
+
+    document.getElementById('mode-button').addEventListener('click', function () {
+        if (classic == true) {
+            document.getElementById('mode-button').innerHTML = 'Extriem';
+            classic = false;
+            startClick();
+        } else {
+            document.getElementById('mode-button').innerHTML = 'Classic';
+            classic = true;
+            startClick();
+        }
+    });
 }
 
 // Blinks start button for the tutorial
