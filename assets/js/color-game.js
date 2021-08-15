@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Pakrautas');
     startClick();
     modeSwich();
+    highscoreBoardLoad();
 })
 
 function startClick() {
@@ -388,7 +389,12 @@ function highscoreCheck() {
     let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
     console.log(scoreBg);
 
+    let claName = [];
     let clasickName = document.getElementsByClassName('highscore-classic-name');
+    for (let i = 0; i < clasickName.length; i++) {
+        claName.push(clasickName[i].innerHTML);
+        console.log(claName[i]);
+    }
 
     let classicScores = [];
     let clasickHighscore = document.getElementsByClassName('highscore-classic-score');
@@ -396,8 +402,10 @@ function highscoreCheck() {
         classicScores.push(clasickHighscore[i].innerHTML);
     }
 
-    let extriemName = document.getElementsByClassName('highscore-extriem-name');
-    let extriemHighscore = document.getElementsByClassName('highscore-extriem-score');
+    // Store
+    //localStorage.setItem("lastname", "Smith");
+    // Retrieve
+    //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 
     if (classic == true) {
         if (scoreBg > classicScores[0]) {
@@ -406,27 +414,331 @@ function highscoreCheck() {
             clasickHighscore[2].innerHTML = classicScores[1];
             clasickHighscore[1].innerHTML = classicScores[0];
             clasickHighscore[0].innerHTML = scoreBg;
+
+            clasickName[4].innerHTML = claName[3];
+            clasickName[3].innerHTML = claName[2];
+            clasickName[2].innerHTML = claName[1];
+            clasickName[1].innerHTML = claName[0];
+
+            localStorage.setItem('classickNr5Score', classicScores[3]);
+            localStorage.setItem('classickNr4Score', classicScores[2]);
+            localStorage.setItem('classickNr3Score', classicScores[1]);
+            localStorage.setItem('classickNr2Score', classicScores[0]);
+            localStorage.setItem('classickNr1Score', scoreBg);
+
+            localStorage.setItem('classickNr5Name', claName[3]);
+            localStorage.setItem('classickNr4Name', claName[2]);
+            localStorage.setItem('classickNr3Name', claName[1]);
+            localStorage.setItem('classickNr2Name', claName[0]);
+
+            let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+            if (person == null || person == "") {
+                clasickName[0].innerHTML = 'Anonimus';
+                localStorage.setItem('classickNr1Name', 'Anonimus');
+            } else {
+                clasickName[0].innerHTML = person;
+                localStorage.setItem('classickNr1Name', person);
+            }
         } else if (scoreBg > classicScores[1]) {
             clasickHighscore[4].innerHTML = classicScores[3];
             clasickHighscore[3].innerHTML = classicScores[2];
             clasickHighscore[2].innerHTML = classicScores[1];
             clasickHighscore[1].innerHTML = scoreBg;
+
+            clasickName[4].innerHTML = claName[4];
+            clasickName[3].innerHTML = claName[2];
+            clasickName[2].innerHTML = claName[1];
+
+            localStorage.setItem('classickNr5Score', classicScores[3]);
+            localStorage.setItem('classickNr4Score', classicScores[2]);
+            localStorage.setItem('classickNr3Score', classicScores[1]);
+            localStorage.setItem('classickNr2Score', scoreBg);
+
+            localStorage.setItem('classickNr5Name', claName[3]);
+            localStorage.setItem('classickNr4Name', claName[2]);
+            localStorage.setItem('classickNr3Name', claName[1]);
+
+            let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+            if (person == null || person == "") {
+                clasickName[1].innerHTML = 'Anonimus';
+                localStorage.setItem('classickNr2Name', 'Anonimus');
+            } else {
+                clasickName[1].innerHTML = person;
+                localStorage.setItem('classickNr2Name', person);
+            }
         } else {
             if (scoreBg > classicScores[2]) {
                 clasickHighscore[4].innerHTML = classicScores[3];
                 clasickHighscore[3].innerHTML = classicScores[2];
                 clasickHighscore[2].innerHTML = scoreBg;
+
+                clasickName[4].innerHTML = claName[4];
+                clasickName[3].innerHTML = claName[2];
+
+                localStorage.setItem('classickNr5Score', classicScores[3]);
+                localStorage.setItem('classickNr4Score', classicScores[2]);
+                localStorage.setItem('classickNr3Score', scoreBg);
+
+                localStorage.setItem('classickNr5Name', claName[3]);
+                localStorage.setItem('classickNr4Name', claName[2]);
+
+                let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+                if (person == null || person == "") {
+                    clasickName[2].innerHTML = 'Anonimus';
+                    localStorage.setItem('classickNr3Name', 'Anonimus');
+                } else {
+                    clasickName[2].innerHTML = person;
+                    localStorage.setItem('classickNr3Name', person);
+                }
             } else {
                 if (scoreBg > classicScores[3]) {
                     clasickHighscore[4].innerHTML = classicScores[3];
                     clasickHighscore[3].innerHTML = scoreBg;
+
+                    clasickName[4].innerHTML = claName[4];
+
+                    localStorage.setItem('classickNr5Score', classicScores[3]);
+                    localStorage.setItem('classickNr4Score', scoreBg);
+
+                    localStorage.setItem('classickNr5Name', claName[3]);
+
+                    let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+                    if (person == null || person == "") {
+                        clasickName[3].innerHTML = 'Anonimus';
+                        localStorage.setItem('classickNr4Name', 'Anonimus');
+                    } else {
+                        clasickName[3].innerHTML = person;
+                        localStorage.setItem('classickNr4Name', person);
+                    }
                 } else {
                     if (scoreBg > classicScores[4]) {
                         clasickHighscore[4].innerHTML = scoreBg;
-                    } else {}
+
+                        localStorage.setItem('classickNr5Score', scoreBg);
+
+                        let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+                        if (person == null || person == "") {
+                            clasickName[4].innerHTML = 'Anonimus';
+                            localStorage.setItem('classickNr5Name', 'Anonimus');
+                        } else {
+                            clasickName[4].innerHTML = person;
+                            localStorage.setItem('classickNr5Name', person);
+                        }
+                    }
                 }
             }
         }
+    }
+
+    let extName = [];
+    let extriemName = document.getElementsByClassName('highscore-extriem-name');
+    for (let i = 0; i < extriemName.length; i++) {
+        extName.push(extriemName[i].innerHTML);
+        console.log(extName[i]);
+    }
+
+    let extriemScores = [];
+    let extriemHighscore = document.getElementsByClassName('highscore-extriem-score');
+    for (let i = 0; i < extriemHighscore.length; i++) {
+        extriemScores.push(extriemHighscore[i].innerHTML);
+    }
+
+    if (classic == false) {
+        if (scoreBg > extriemScores[0]) {
+            extriemHighscore[4].innerHTML = extriemScores[3];
+            extriemHighscore[3].innerHTML = extriemScores[2];
+            extriemHighscore[2].innerHTML = extriemScores[1];
+            extriemHighscore[1].innerHTML = extriemScores[0];
+            extriemHighscore[0].innerHTML = scoreBg;
+
+            extriemName[4].innerHTML = extName[3];
+            extriemName[3].innerHTML = extName[2];
+            extriemName[2].innerHTML = extName[1];
+            extriemName[1].innerHTML = extName[0];
+
+            localStorage.setItem('extriemNr5Score', extriemScores[3]);
+            localStorage.setItem('extriemNr4Score', extriemScores[2]);
+            localStorage.setItem('extriemNr3Score', extriemScores[1]);
+            localStorage.setItem('extriemNr2Score', extriemScores[0]);
+            localStorage.setItem('extriemNr1Score', scoreBg);
+
+            localStorage.setItem('extriemNr5Name', claName[3]);
+            localStorage.setItem('extriemNr4Name', claName[2]);
+            localStorage.setItem('extriemNr3Name', claName[1]);
+            localStorage.setItem('extriemNr2Name', claName[0]);
+
+            let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+            if (person == null || person == "") {
+                extriemName[0].innerHTML = 'Anonimus';
+                localStorage.setItem('extriemNr1Name', 'Anonimus');
+            } else {
+                extriemName[0].innerHTML = person;
+                localStorage.setItem('extriemNr1Name', person);
+            }
+        } else if (scoreBg > extriemScores[1]) {
+            extriemHighscore[4].innerHTML = extriemScores[3];
+            extriemHighscore[3].innerHTML = extriemScores[2];
+            extriemHighscore[2].innerHTML = extriemScores[1];
+            extriemHighscore[1].innerHTML = scoreBg;
+
+            extriemName[4].innerHTML = extName[4];
+            extriemName[3].innerHTML = extName[2];
+            extriemName[2].innerHTML = extName[1];
+
+            localStorage.setItem('extriemNr5Score', extriemScores[3]);
+            localStorage.setItem('extriemNr4Score', extriemScores[2]);
+            localStorage.setItem('extriemNr3Score', extriemScores[1]);
+            localStorage.setItem('extriemNr2Score', scoreBg);
+
+            localStorage.setItem('extriemNr5Name', extName[3]);
+            localStorage.setItem('extriemNr4Name', extName[2]);
+            localStorage.setItem('extriemNr3Name', extName[1]);
+
+            let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+            if (person == null || person == "") {
+                extriemName[1].innerHTML = 'Anonimus';
+                localStorage.setItem('extriemNr2Name', 'Anonimus');
+            } else {
+                extriemName[1].innerHTML = person;
+                localStorage.setItem('extriemNr2Name', person);
+            }
+        } else {
+            if (scoreBg > extriemScores[2]) {
+                extriemHighscore[4].innerHTML = extriemScores[3];
+                extriemHighscore[3].innerHTML = extriemScores[2];
+                clasickextriemHighscoreHighscore[2].innerHTML = scoreBg;
+
+                extriemName[4].innerHTML = extName[4];
+                extriemName[3].innerHTML = extName[2];
+
+                localStorage.setItem('extriemNr5Score', extriemScores[3]);
+                localStorage.setItem('extriemNr4Score', extriemScores[2]);
+                localStorage.setItem('extriemNr3Score', scoreBg);
+
+                localStorage.setItem('extriemNr5Name', extName[3]);
+                localStorage.setItem('extriemNr4Name', extName[2]);
+
+                let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+                if (person == null || person == "") {
+                    extriemName[2].innerHTML = 'Anonimus';
+                    localStorage.setItem('extriemNr3Name', 'Anonimus');
+                } else {
+                    extriemName[2].innerHTML = person;
+                    localStorage.setItem('extriemNr3Name', person);
+                }
+            } else {
+                if (scoreBg > extriemScores[3]) {
+                    extriemHighscore[4].innerHTML = extriemScores[3];
+                    extriemHighscore[3].innerHTML = scoreBg;
+
+                    extriemName[4].innerHTML = extName[4];
+
+                    localStorage.setItem('extriemNr5Score', extriemScores[3]);
+                    localStorage.setItem('extriemNr4Score', scoreBg);
+
+                    localStorage.setItem('extriemNr5Name', extName[3]);
+
+                    let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+                    if (person == null || person == "") {
+                        extriemName[3].innerHTML = 'Anonimus';
+                        localStorage.setItem('extriemNr4Name', 'Anonimus');
+                    } else {
+                        extriemName[3].innerHTML = person;
+                        localStorage.setItem('extriemNr4Name', person);
+                    }
+                } else {
+                    if (scoreBg > extriemScores[4]) {
+                        extriemHighscore[4].innerHTML = scoreBg;
+
+                        localStorage.setItem('extriemNr5Score', scoreBg);
+
+                        let person = prompt('You got a highscore. Enter your name', 'Anonimus');
+                        if (person == null || person == "") {
+                            extriemName[4].innerHTML = 'Anonimus';
+                            localStorage.setItem('extriemNr5Name', 'Anonimus');
+                        } else {
+                            extriemName[4].innerHTML = person;
+                            localStorage.setItem('extriemNr5Name', person);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+function highscoreBoardLoad() {
+
+    let classicResult1Name = localStorage.getItem('classickNr1Name');
+    let classicResult2Name = localStorage.getItem('classickNr2Name');
+    let classicResult3Name = localStorage.getItem('classickNr3Name');
+    let classicResult4Name = localStorage.getItem('classickNr4Name');
+    let classicResult5Name = localStorage.getItem('classickNr5Name');
+
+    let classicResult1Score = localStorage.getItem('classickNr1Score');
+    let classicResult2Score = localStorage.getItem('classickNr2Score');
+    let classicResult3Score = localStorage.getItem('classickNr3Score');
+    let classicResult4Score = localStorage.getItem('classickNr4Score');
+    let classicResult5Score = localStorage.getItem('classickNr5Score');
+
+    let clasickName = document.getElementsByClassName('highscore-classic-name');
+    let clasickHighscore = document.getElementsByClassName('highscore-classic-score');
+
+    if (classicResult1Name != '-' || clasicResult1Name != 'undefined') {
+        clasickName[0].innerHTML = classicResult1Name;
+        clasickHighscore[0].innerHTML = classicResult1Score;
+    }
+    if (classicResult2Name != '-' || classicResult2Name != 'undefined') {
+        clasickName[1].innerHTML = classicResult2Name;
+        clasickHighscore[1].innerHTML = classicResult2Score;
+    }
+    if (classicResult3Name != '-' || classicResult3Name != 'undefined') {
+        clasickName[2].innerHTML = classicResult3Name;
+        clasickHighscore[2].innerHTML = classicResult3Score;
+    }
+    if (classicResult4Name != '-' || classicResult4Name != 'undefined') {
+        clasickName[3].innerHTML = classicResult4Name;
+        clasickHighscore[3].innerHTML = classicResult4Score;
+    }
+    if (classicResult5Name != '-' || classicResult5Name != 'undefined') {
+        clasickName[4].innerHTML = classicResult5Name;
+        clasickHighscore[4].innerHTML = classicResult5Score;
+    }
+
+    let extriemResult1Name = localStorage.getItem('extriemNr1Name');
+    let extriemResult2Name = localStorage.getItem('extriemNr2Name');
+    let extriemResult3Name = localStorage.getItem('extriemNr3Name');
+    let extriemResult4Name = localStorage.getItem('extriemNr4Name');
+    let extriemResult5Name = localStorage.getItem('extriemNr5Name');
+
+    let extriemResult1Score = localStorage.getItem('extriemNr1Score');
+    let extriemResult2Score = localStorage.getItem('extriemNr2Score');
+    let extriemResult3Score = localStorage.getItem('extriemNr3Score');
+    let extriemResult4Score = localStorage.getItem('extriemNr4Score');
+    let extriemResult5Score = localStorage.getItem('extriemNr5Score');
+
+    let extriemName = document.getElementsByClassName('highscore-extriem-name');
+    let extriemHighscore = document.getElementsByClassName('highscore-extriem-score');
+
+    if (extriemResult1Name != '-' || extriemResult1Name != 'undefined') {
+        extriemName[0].innerHTML = extriemResult1Name;
+        extriemHighscore[0].innerHTML = extriemResult1Score;
+    }
+    if (extriemResult2Name != '-' || extriemResult2Name != 'undefined') {
+        extriemName[1].innerHTML = extriemResult2Name;
+        extriemHighscore[1].innerHTML = extriemResult2Score;
+    }
+    if (extriemResult3Name != '-' || extriemResult3Name != 'undefined') {
+        extriemName[2].innerHTML = extriemResult3Name;
+        extriemHighscore[2].innerHTML = extriemResult3Score;
+    }
+    if (extriemResult4Name != '-' || extriemResult4Name != 'undefined') {
+        extriemName[3].innerHTML = extriemResult4Name;
+        extriemHighscore[3].innerHTML = extriemResult4Score;
+    }
+    if (extriemResult5Name != '-' || extriemResult5Name != 'undefined') {
+        extriemName[4].innerHTML = extriemResult5Name;
+        extriemHighscore[4].innerHTML = extriemResult5Score;
     }
 }
 
