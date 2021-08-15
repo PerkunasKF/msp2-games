@@ -169,7 +169,7 @@
                             current score and the color patter will start.</li>
                         <li>Color will blink in a pattern. You must repeat the pattern witch will get longer and longer.
                             The game is infinit, how long can you go?</li>
-                        <li> - Click this icon to send some feedback.</li>
+                        <li><i class="fas fa-envelope explanation-icons"></i> - Click this icon to send some feedback.</li>
                     </ul>
                 </div>
                 <div class="modal-footer">
@@ -283,13 +283,20 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form onsubmit="return sendMail(this);">
-                        <input type="text" name="name" id="name" placeholder="Name" required />
-                        <input type="text" name="emailaddress" id="email" placeholder="Email" required />
-                        <textarea rows="5" name="feedback" id="feedback-text"
-                            placeholder="Right your feedback here..." required></textarea>
-                        <button type="submit" class="btn btn-secondary center-block">Send Feedback</button>
-                    </form>
+                    <div class="row-fluid">
+                        <div class="col d-flex justify-content-center">
+                            <form class="feedback-form-input" onsubmit="return sendMail(this);">
+                                <input type="text" name="name" id="name" class="feedback-form-input" placeholder="Name"
+                                    required /><br>
+                                <input type="text" name="emailaddress" id="email" class="feedback-form-input"
+                                    placeholder="Email" required /><br>
+                                <textarea rows="5" name="feedback" id="feedback-text" class="feedback-form-input"
+                                    placeholder="Right your feedback here..." required></textarea><br>
+                                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Send
+                                    Feedback</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -217,6 +217,16 @@ td {
     bottom: 20px;
 }
 
+.feedback-form-input {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+    width: 100%;
+    border-radius: 5px;
+
+    margin-top: 10px;
+}
+
 /*-------------------------------------------------------------*/
 /*                        Animations                           */
 /*-------------------------------------------------------------*/
