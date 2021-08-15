@@ -224,81 +224,81 @@ function colorClickBlink() {
         click++;
         patternCheck(colorPattern, click);
         setTimeout(function () {
-        document.getElementById('blue-button').style.backgroundColor = '';
-    }, 150);
-});
+            document.getElementById('blue-button').style.backgroundColor = '';
+        }, 150);
+    });
 
-$('#green-button').off().on('click', function () {
-    document.getElementById('green-button').style.backgroundColor = '#1cff91';
-    clickSound();
-    colorValue = 3;
-    colorPattern.push(colorValue);
-    click++;
-    patternCheck(colorPattern, click);
-    setTimeout(function () {
-        document.getElementById('green-button').style.backgroundColor = '';
-    }, 150);
-});
+    $('#green-button').off().on('click', function () {
+        document.getElementById('green-button').style.backgroundColor = '#1cff91';
+        clickSound();
+        colorValue = 3;
+        colorPattern.push(colorValue);
+        click++;
+        patternCheck(colorPattern, click);
+        setTimeout(function () {
+            document.getElementById('green-button').style.backgroundColor = '';
+        }, 150);
+    });
 
-$('#yellow-button').off().on('click', function () {
-    document.getElementById('yellow-button').style.backgroundColor = '#fff41c';
-    clickSound();
-    colorValue = 4;
-    colorPattern.push(colorValue);
-    click++;
-    patternCheck(colorPattern, click);
-    setTimeout(function () {
-        document.getElementById('yellow-button').style.backgroundColor = '';
-    }, 150);
-});
+    $('#yellow-button').off().on('click', function () {
+        document.getElementById('yellow-button').style.backgroundColor = '#fff41c';
+        clickSound();
+        colorValue = 4;
+        colorPattern.push(colorValue);
+        click++;
+        patternCheck(colorPattern, click);
+        setTimeout(function () {
+            document.getElementById('yellow-button').style.backgroundColor = '';
+        }, 150);
+    });
 
-$('#small-red-button').off().on('click', function () {
-    document.getElementById('small-red-button').style.backgroundColor = '#ff2b1c';
-    clickSound();
-    colorValue = 1;
-    colorPattern.push(colorValue);
-    click++;
-    patternCheck(colorPattern, click);
-    setTimeout(function () {
-        document.getElementById('small-red-button').style.backgroundColor = '';
-    }, 150);
-});
+    $('#small-red-button').off().on('click', function () {
+        document.getElementById('small-red-button').style.backgroundColor = '#ff2b1c';
+        clickSound();
+        colorValue = 1;
+        colorPattern.push(colorValue);
+        click++;
+        patternCheck(colorPattern, click);
+        setTimeout(function () {
+            document.getElementById('small-red-button').style.backgroundColor = '';
+        }, 150);
+    });
 
-$('#small-blue-button').off().on('click', function () {
-    document.getElementById('small-blue-button').style.backgroundColor = '#1ca0ff';
-    clickSound();
-    colorValue = 2;
-    colorPattern.push(colorValue);
-    click++;
-    patternCheck(colorPattern, click);
-    setTimeout(function () {
-        document.getElementById('small-blue-button').style.backgroundColor = '';
-    }, 150);
-});
+    $('#small-blue-button').off().on('click', function () {
+        document.getElementById('small-blue-button').style.backgroundColor = '#1ca0ff';
+        clickSound();
+        colorValue = 2;
+        colorPattern.push(colorValue);
+        click++;
+        patternCheck(colorPattern, click);
+        setTimeout(function () {
+            document.getElementById('small-blue-button').style.backgroundColor = '';
+        }, 150);
+    });
 
-$('#small-green-button').off().on('click', function () {
-    document.getElementById('small-green-button').style.backgroundColor = '#1cff91';
-    clickSound();
-    colorValue = 3;
-    colorPattern.push(colorValue);
-    click++;
-    patternCheck(colorPattern, click);
-    setTimeout(function () {
-        document.getElementById('small-green-button').style.backgroundColor = '';
-    }, 150);
-});
+    $('#small-green-button').off().on('click', function () {
+        document.getElementById('small-green-button').style.backgroundColor = '#1cff91';
+        clickSound();
+        colorValue = 3;
+        colorPattern.push(colorValue);
+        click++;
+        patternCheck(colorPattern, click);
+        setTimeout(function () {
+            document.getElementById('small-green-button').style.backgroundColor = '';
+        }, 150);
+    });
 
-$('#small-yellow-button').off().on('click', function () {
-    document.getElementById('small-yellow-button').style.backgroundColor = '#fff41c';
-    clickSound();
-    colorValue = 4;
-    colorPattern.push(colorValue);
-    click++;
-    patternCheck(colorPattern, click);
-    setTimeout(function () {
-        document.getElementById('small-yellow-button').style.backgroundColor = '';
-    }, 150);
-});
+    $('#small-yellow-button').off().on('click', function () {
+        document.getElementById('small-yellow-button').style.backgroundColor = '#fff41c';
+        clickSound();
+        colorValue = 4;
+        colorPattern.push(colorValue);
+        click++;
+        patternCheck(colorPattern, click);
+        setTimeout(function () {
+            document.getElementById('small-yellow-button').style.backgroundColor = '';
+        }, 150);
+    });
 }
 
 // Checks if the player is clicking colors in the right pattern
@@ -315,6 +315,7 @@ function patternCheck(valueCheck, click) {
         }
     } else {
         highScore();
+        highscoreCheck();
         disableColors();
         gameOwer = 1;
         document.getElementById('start-button').style.backgroundColor = 'red';
@@ -381,6 +382,52 @@ function modeSwich() {
             startClick();
         }
     });
+}
+
+function highscoreCheck() {
+    let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
+    console.log(scoreBg);
+
+    let clasickName = document.getElementsByClassName('highscore-classic-name');
+
+    let classicScores = [];
+    let clasickHighscore = document.getElementsByClassName('highscore-classic-score');
+    for (let i = 0; i < clasickHighscore.length; i++) {
+        classicScores.push(clasickHighscore[i].innerHTML);
+    }
+
+    let extriemName = document.getElementsByClassName('highscore-extriem-name');
+    let extriemHighscore = document.getElementsByClassName('highscore-extriem-score');
+
+    if (classic == true) {
+        if (scoreBg > classicScores[0]) {
+            clasickHighscore[4].innerHTML = classicScores[3];
+            clasickHighscore[3].innerHTML = classicScores[2];
+            clasickHighscore[2].innerHTML = classicScores[1];
+            clasickHighscore[1].innerHTML = classicScores[0];
+            clasickHighscore[0].innerHTML = scoreBg;
+        } else if (scoreBg > classicScores[1]) {
+            clasickHighscore[4].innerHTML = classicScores[3];
+            clasickHighscore[3].innerHTML = classicScores[2];
+            clasickHighscore[2].innerHTML = classicScores[1];
+            clasickHighscore[1].innerHTML = scoreBg;
+        } else {
+            if (scoreBg > classicScores[2]) {
+                clasickHighscore[4].innerHTML = classicScores[3];
+                clasickHighscore[3].innerHTML = classicScores[2];
+                clasickHighscore[2].innerHTML = scoreBg;
+            } else {
+                if (scoreBg > classicScores[3]) {
+                    clasickHighscore[4].innerHTML = classicScores[3];
+                    clasickHighscore[3].innerHTML = scoreBg;
+                } else {
+                    if (scoreBg > classicScores[4]) {
+                        clasickHighscore[4].innerHTML = scoreBg;
+                    } else {}
+                }
+            }
+        }
+    }
 }
 
 // Blinks start button for the tutorial

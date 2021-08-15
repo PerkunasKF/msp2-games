@@ -92,16 +92,16 @@
                 </div>
             </div>
             <div class="col show-big-screen vertical-center my-col">
-                <button id="high-score-button" class="score-btn btns show-big-screen"><span
-                        id="high-score-big">0</span></button>
+                <button id="high-score-button" class="score-btn btns show-big-screen" data-bs-toggle="modal"
+                    data-bs-target="#hoghscore-bord"><span id="high-score-big">0</span></button>
             </div>
         </div>
 
         <div id="footer" class="row my-row">
             <div class="col my-col"></div>
             <div class="col d-flex justify-content-center align-items-center my-col">
-                <button id="small-high-score-button" class="score-btn show-small-screen"><span
-                        id="small-high-score">0</span></button>
+                <button id="small-high-score-button" class="score-btn show-small-screen" data-bs-toggle="modal"
+                    data-bs-target="#hoghscore-bord"><span id="small-high-score">0</span></button>
             </div>
         </div>
     </div>
@@ -160,6 +160,102 @@
                             The game is infinit, how long can you go?</li>
                         <li> - Click this icon to send some feedback.</li>
                     </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="hoghscore-bord" tabindex="-1" aria-labelledby="hoghscore-bord-Label" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="hoghscore-bord-Label">High Score Bord</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <h3>Classic</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td class="highscore-classic-name">-</td>
+                                        <td class="highscore-classic-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td class="highscore-classic-name">-</td>
+                                        <td class="highscore-classic-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td class="highscore-classic-name">-</td>
+                                        <td class="highscore-classic-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td class="highscore-classic-name">-</td>
+                                        <td class="highscore-classic-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td class="highscore-classic-name">-</td>
+                                        <td class="highscore-classic-score">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <h3>Extriem</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td class="highscore-extriem-name">-</td>
+                                        <td class="highscore-extriem-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td class="highscore-extriem-name">-</td>
+                                        <td class="highscore-extriem-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td class="highscore-extriem-name">-</td>
+                                        <td class="highscore-extriem-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td class="highscore-extriem-name">-</td>
+                                        <td class="highscore-extriem-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td class="highscore-extriem-name">-</td>
+                                        <td class="highscore-extriem-score">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
