@@ -20,6 +20,14 @@
     <script type="text/javascript" src="assets/js/color-game.js"></script>
 
     <title>Home|Color Game</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_hMCpf9cloTr7JuAaJDdRS");
+        })();
+    </script>
 </head>
 
 <body>
@@ -98,7 +106,10 @@
         </div>
 
         <div id="footer" class="row my-row">
-            <div class="col my-col"></div>
+            <div class="col my-col">
+                <i id="feedback-button" class="fas fa-envelope main-modes-icons" data-bs-toggle="modal"
+                    data-bs-target="#feedback"></i>
+            </div>
             <div class="col d-flex justify-content-center align-items-center my-col">
                 <button id="small-high-score-button" class="score-btn show-small-screen" data-bs-toggle="modal"
                     data-bs-target="#hoghscore-bord"><span id="small-high-score">0</span></button>
@@ -264,6 +275,28 @@
         </div>
     </div>
 
+    <div class="modal fade" id="feedback" tabindex="-1" aria-labelledby="feedback-Label" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="feedback-Label">Please Send Your Feedback</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="return sendMail(this);">
+                        <input type="text" name="name" id="name" placeholder="Name" required />
+                        <input type="text" name="emailaddress" id="email" placeholder="Email" required />
+                        <textarea rows="5" name="feedback" id="feedback-text"
+                            placeholder="Right your feedback here..." required></textarea>
+                        <button type="submit" class="btn btn-secondary center-block">Send Feedback</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--
         <div class="container-fluid">

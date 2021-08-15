@@ -211,6 +211,12 @@ td {
     border-bottom-right-radius: 500px;
 }
 
+#feedback-button {
+    position: relative;
+    right: -25%;
+    bottom: 20px;
+}
+
 /*-------------------------------------------------------------*/
 /*                        Animations                           */
 /*-------------------------------------------------------------*/
