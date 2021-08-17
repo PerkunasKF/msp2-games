@@ -110,7 +110,7 @@ A scope was defined to clearly identify what needed to be done to align features
      - The user will be able to:
           - Responsive game design
           - Clearly defined interactive elements
-          - Clearly define a game area
+          - Clearly define game area
           - Toggle between game modes
           - Send feedback to the developer
 
@@ -127,3 +127,15 @@ Wireframe mockup was created in a [Figma Workspace](https://www.figma.com/file/v
      ![Main Page] Prideti modelio paveiksla
 
 [Back to top ⇧](#table-of-contents)
+
+## Features
+
+### Design Features
+All features are responsive and intuitive:
+- **Reset** - On the top left corner there is an icon witch will reset the game any time the player wishes.
+- **Tutorial** - On the top right corner there is an icon witch will open tutorial container with the game instructions and other game features.
+- **Start/Score/Game Over** - In the middle of the screen there is the game area with four colors and the start, start button changes into the current score holder after the game starts. And changes into the game over indicator after the player make a mistake.
+- **Classic/Extreme** - On the left side of the screen there is a mode button after click the game mode changes from classic to extreme.
+- **High score** - On the right side of the screen there is a better high score achieved indicator also functions as a button to open high score board.
+- **Feedback** - On the bottom left corner there is and icon which will open feedback forum after clicking it.
+
