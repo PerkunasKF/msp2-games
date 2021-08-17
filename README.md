@@ -62,3 +62,12 @@ The Developer is looking to:
 - Demonstrate their skills in software development, using newly learned languages and libraries.
 - Deploy a project on their portfolio.
 
+### User Stories
+**As a player, I want to:**
+
+1. Intuitive controls.
+2. Have a score counter and a high score board to see how well am I doing.
+3. Get a visual feedback to see when the game starts and when it is over.
+4. Provide feedback to the developer to improve the game.
+5. Get easy to find and understand instruction on how to play the game.
+
