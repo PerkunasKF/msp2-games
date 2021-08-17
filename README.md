@@ -153,3 +153,32 @@ The developer ran into a number of issues during the development of the game, wi
 
 **Game loads on top of the screen** - In higher screen game would load on top of the screen. The solution was to make a container witch was fixed to the middle of the screen and put all of the content inside the container.
 
+[Back to top ⇧](#table-of-contents)
+
+## Technologies Used
+### Main Languages Used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5 "Link to HTML Wiki")
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Link to CSS Wiki")
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to JavaScript Wiki")
+
+### Frameworks, Libraries & Programs Used
+- [Bootstrap](https://getbootstrap.com/ "Link to Bootstrap page")
+     - Bootstrap was used to implement the responsiveness of the site, using bootstrap classes.
+- [jQuery](https://jquery.com/download/ "Link to jQuery page")
+     - jQuery was used to simplify the JavaScript code used.
+- [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
+    - Google fonts was used to import the font "Roboto".
+- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
+     - Font Awesome was used for graphical indication of features buttons.
+- [Git](https://git-scm.com/ "Link to Git homepage")
+     - Git was used for version control by utilizing the GitPod terminal to commit to Git and push to GitHub.
+- [GitHub](https://github.com/ "Link to GitHub")
+     - GitHub was used to store the project after pushing.
+- [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page")
+     - jQuery Validation was used to simplify form validation for the **Feedback Form**.
+- [Figma](https://www.figma.com/ "Link to Figma homepage")
+     - Figma was used to create the wireframes during the design phase of the project.
+- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
+     - Am I Responsive was used in order to validate the responsiveness of the design.
+
+[Back to top ⇧](#table-of-contents)
