@@ -19,9 +19,6 @@
     2. [User Stories](#User-Stories)
     3. [Development Planes](#Development-Planes)
 2. [Features](#Features)
-    1. [Design Features](#Design-Features) 
-    2. [Existing Features](#Existing-Features)
-    3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
 3. [Issues and Bugs](#Issues-and-Bugs)
 4. [Technologies Used](#Technologies-Used)
      1. [Main Languages Used](#Main-Languages-Used)
@@ -129,8 +126,6 @@ Wireframe mockup was created in a [Figma Workspace](https://www.figma.com/file/v
 [Back to top ⇧](#table-of-contents)
 
 ## Features
-
-### Design Features
 All features are responsive and intuitive:
 - **Reset** - On the top left corner there is an icon witch will reset the game any time the player wishes.
 - **Tutorial** - On the top right corner there is an icon witch will open tutorial container with the game instructions and other game features.
@@ -138,4 +133,23 @@ All features are responsive and intuitive:
 - **Classic/Extreme** - On the left side of the screen there is a mode button after click the game mode changes from classic to extreme.
 - **High score** - On the right side of the screen there is a better high score achieved indicator also functions as a button to open high score board.
 - **Feedback** - On the bottom left corner there is and icon which will open feedback forum after clicking it.
+
+[Back to top ⇧](#table-of-contents)
+
+## Issues and Bugs 
+The developer ran into a number of issues during the development of the game, with the noteworthy ones listed below, along with solutions.
+
+**All color blink at once** - At the early stages of the game development, developer ran into a bug where all colors blink at once. The console log testing message was showing the correct number pattern (every color had a number assigned for faster bug tracking), But the color would flash at once. A solution was found on https://stackoverflow.com/ (Also new feature learned). The code is going fast and so the color seem to blink at the same time, by adding **setTimeout** functions to the for loop developer manage to get all the color to blink in 0,5 s intervals.
+
+**Same color patter blink only once** - After getting the same color in a row, more than once, the color only blinks ones. The solution was to add a **setTimeout** function after the entire loop, seen the color blink starts without a pause. Now, after each blink there is a 0.5 s delay before the color blink.
+
+**Answer Eco** - After clicking the color button you would get multiple same values. A solution was found on https://stackoverflow.com/. Add a Jquarry functionality to the button witch would save only one click and send only one value ($('#id').off().on()('click', function(){})).
+
+**After wrong answer double patter** - After clicking the wrong color two color patterns would start. The problem was that game start function would start simultaneously at the game over pattern. Simply adding one extra if statement fixed this problem.
+
+**Sound not playing on a hosted page** - While implementing a sound for color blinks, a bug occurred where there was no sound on the hosted page, but he previews page was playing the sound. After careful inspection of the code problem was found on the directory link, there was one extra '/' at the beginning of the directory ink.
+
+**After mistake Start button not clickable** - After game over palter the start button would not reset and be clickable again. The problem was in the index.html file. The button was put inside the red button div witch is disabled before the start of the game. So after disabling the div the start button would become disabled as well. Moved the start button to it own container, that fixed the problem.
+
+**Game loads on top of the screen** - In higher screen game would load on top of the screen. The solution was to make a container witch was fixed to the middle of the screen and put all of the content inside the container.
 
