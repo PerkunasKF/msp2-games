@@ -29,7 +29,7 @@
      2. [Forking the Repository](#Forking-the-Repository)
      3. [Creating a Clone](#Creating-a-Clone)
 7. [Credits](#Credits)
-     1. [Audio](#Audio) ☞ **[Credits.md](CREDITS.md)**
+     1. [Audio](#Audio)
      2. [Code](#Code)
 ***
 
