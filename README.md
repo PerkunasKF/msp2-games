@@ -7,7 +7,7 @@
 </h2>
   
 <div align="center">
-  Simon says color game is a memory game in which player follows the color pattern that is shown. After each correctly followed round the color patter gets longer and longer: **how long will you go**?
+  Simon says color game is a memory game in which player follows the color pattern that is shown. After each correctly followed round the color patter gets longer and longer: how long will you go?
 
 [View the live project here](https://perkunaskf.github.io/msp2-games/)
 
@@ -71,3 +71,59 @@ The Developer is looking to:
 4. Provide feedback to the developer to improve the game.
 5. Get easy to find and understand instruction on how to play the game.
 
+### Development Planes
+
+To create and design a web-based interactive game, the developer distinguished the necessary functionality of the game and how it would answer to the user stories:
+
+<strong>1. <u>Strategy</u></strong>
+
+Broken into two categories, the website will focus on the following target audiences:
+- **Roles:**
+     - New Players
+     - Current Players
+     - Returning Players
+
+- **Demographic:**
+     - Chalenge lovers
+     - Age 5 years and up
+
+The website needs to enable the **user** to:
+- Find instructions with ease
+- Choose their preferred game mode
+- Be able to see theirs or someone else high score
+- Provide feedback to the developer
+
+With these goals in mind, a strategy table was created:
+
+![Strategy Table] Strategijos lentele
+
+<strong>2. <u>Scope</u></strong>
+
+A scope was defined to clearly identify what needed to be done to align features with the strategy:
+- **Content Requirements**
+     - The user will be looking for:
+          - Easy to find instruction
+          - Current accumulated score
+          - High score board
+          - Appealing game environment
+- **Functionality Requirements**
+     - The user will be able to:
+          - Responsive game design
+          - Clearly defined interactive elements
+          - Clearly define a game area
+          - Toggle between game modes
+          - Send feedback to the developer
+
+<strong>3. <u>Structure</u></strong>
+
+The entire game was fitted in one page for ease of use and all information is easily reached true the main page. The **hierarchial tree structure**:
+
+![Site Map] Prideti informacijos medi
+
+<strong>4. <u>Skeleton</u></strong>
+
+Wireframe mockup was created in a [Figma Workspace](https://www.figma.com/file/vt1vlEaqolTvRzSvSoxpvp/Color-Game?node-id=0%3A1 "Link to Blank! Figma Workspace"). The original design was not kept because it provided to high on a screen so some of the information was not usable. Also the design was too plain and not as appealing.
+
+     ![Main Page] Prideti modelio paveiksla
+
+[Back to top ⇧](#table-of-contents)
