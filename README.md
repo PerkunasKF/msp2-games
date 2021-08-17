@@ -31,7 +31,6 @@
 7. [Credits](#Credits)
      1. [Audio](#Audio) ☞ **[Credits.md](CREDITS.md)**
      2. [Code](#Code)
-8. [Acknowledgements](#Acknowledgements)
 ***
 
 ![Blank! Responsiveness]responsivnes mock up image
@@ -239,5 +238,20 @@ git clone https://github.com/USERNAME/REPOSITORY
 8. Press Enter. Your local clone will be created.
 
 Further reading and troubleshooting on cloning a repository from GitHub [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Link to GitHub troubleshooting")
+
+[Back to top ⇧](#table-of-contents)
+
+## Credits 
+
+### Audio
+The sound effects and song lyrics that are used in this website are for educational purposes only. There is no copyright infringement intended.
+
+Sorce for sound effects used: [Freesound](https://freesound.org/ "Link to ")
+
+### Code 
+The developer consulted multiple sites in order to better understand the code they were trying to implement. For code that was copied and edited, the developer made sure to reference this within the code. The following sites were used on a more regular basis:
+- [Stack Overflow](https://stackoverflow.com/ "Link to Stack Overflow page")
+- [W3Schools](https://www.w3schools.com/ "Link to W3Schools page")
+- [Bootstrap](https://getbootstrap.com/ "Link to BootStrap page")
 
 [Back to top ⇧](#table-of-contents)
