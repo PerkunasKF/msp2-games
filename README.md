@@ -120,7 +120,7 @@ The entire game was fitted in one page for ease of use and all information is ea
 
 Wireframe mockup was created in a [Figma Workspace](https://www.figma.com/file/vt1vlEaqolTvRzSvSoxpvp/Color-Game?node-id=0%3A1 "Link to Blank! Figma Workspace"). The original design was not kept because it provided to high on a screen so some of the information was not usable. Also the design was too plain and not as appealing.
 
-     ![Main Page] Prideti modelio paveiksla
+     ![Main Page](assets/img/first-model.png)
 
 [Back to top ⇧](#table-of-contents)
 
