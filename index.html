@@ -6,21 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap 5 -->
+    <!-------------- Bootstrap 5 ------------------------------------------------------------------------------------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <!-------------- Font Awsome ------------------------------------------------------------------------------------>
     <script src="https://kit.fontawesome.com/4c53668ab7.js" crossorigin="anonymous"></script>
 
+    <!-------------- Local links ------------------------------------------------------------------------------------>
     <link rel="stylesheet" href="assets/css/style.css">
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/color-game.js"></script>
 
     <title>Home|Color Game</title>
 
+    <!-------------- JSdeliver script ------------------------------------------------------------------------------>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
     </script>
     <script type="text/javascript">
@@ -32,12 +35,22 @@
 
 <body>
 
+    <!-------------- Main container | start ------------------------------------------------------------------------------------>
+    <!-- Container for placing all of the game content in the middle of the screen --->
     <div id="main-container" class="container my-container">
+
+        <!-------------- Header elements | start ----------------------------------------------------------->
         <div id="main-modes" class="row my-row">
+
+            <!-------------- Reset button ------------->
             <div class="col d-flex justify-content-center my-col">
                 <span><i id="reset-button" class="fas fa-sync-alt main-modes-icons"></i></span>
             </div>
+
+            <!-------------- Start button and color button container | start ------------->
             <div class="col-6 show-big-screen my-col">
+
+                <!-------------- Start button ------------->
                 <div class="row d-flex justify-content-center my-row">
                     <div class="col d-flex justify-content-center my-col">
                         <button id="start-button" class="startButton"><span
@@ -45,6 +58,8 @@
                                 id="current-score-big">0</span></button>
                     </div>
                 </div>
+
+                <!-------------- Color buttons ------------->
                 <div class="row my-row">
                     <div class="col my-col">
                         <div class="row d-flex justify-content-center">
@@ -61,7 +76,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+            <!-------------- Start button and color button container | end --------------->
+
+            <!-------------- Big and small tutorial buttons ------------->
             <div id="turorial-box-2" class="col d-flex justify-content-center my-col">
                 <span class="show-big-screen"><i id="turorial-icon"
                         class="far fa-question-circle main-modes-icons d-flex" data-bs-toggle="modal"
@@ -71,13 +90,22 @@
                         <i id="bar-icon" class="fas fa-bars show-small-screen"></i>
                     </button></span>
             </div>
-        </div>
 
+        </div>
+        <!-------------- Header elements | end ------------------------------------------------------------->
+
+        <!-------------- Small screen game area | Start ---------------------------------------------------->
         <div class="row button-are my-row">
+
+            <!-------------- Classic/Extreme mode buttons ------------->
             <div class="col show-big-screen vertical-center my-col">
                 <button id="mode-button" class="mode-btn btns show-big-screen">Classic</button>
             </div>
+
+            <!-------------- Start and color buttons for small screens buttons | start ------------->
             <div class="col my-col">
+
+                <!-------------- Start button for small screens ------------->
                 <div class="row show-small-screen d-flex justify-content-center my-row">
                     <div class="col d-flex justify-content-center my-col">
                         <button id="small-start-button" class="startButton show-small-screen"><span
@@ -85,6 +113,8 @@
                                 id="small-current-score">0</span></button>
                     </div>
                 </div>
+
+                <!-------------- Color buttons for small screens ------------->
                 <div class="row show-small-screen my-row">
                     <div class="col my-col">
                         <div class="row d-flex justify-content-center">
@@ -101,29 +131,45 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+            <!-------------- Start and color buttons for small screens buttons | end --------------->
+
+            <!-------------- High score board button ------------->
             <div class="col show-big-screen vertical-center my-col">
                 <button id="high-score-button" class="score-btn btns show-big-screen" data-bs-toggle="modal"
                     data-bs-target="#hoghscore-bord"><span id="high-score-big">High Score</span></button>
             </div>
-        </div>
 
+        </div>
+        <!-------------- Small screen game area | end ------------------------------------------------------>
+
+        <!-------------- Footer | Start -------------------------------------------------------------------->
         <div id="footer" class="row my-row">
+
+            <!-------------- Feed back button -------------------->
             <div class="col my-col">
                 <i id="feedback-button" class="fas fa-envelope main-modes-icons" data-bs-toggle="modal"
                     data-bs-target="#feedback"></i>
             </div>
+
+            <!-------------- High score button for small screens -------------------->
             <div class="col d-flex justify-content-center align-items-center my-col">
                 <button id="small-high-score-button" class="score-btn show-small-screen" data-bs-toggle="modal"
                     data-bs-target="#hoghscore-bord"><span id="small-high-score">High Score</span></button>
             </div>
         </div>
-    </div>
+        <!-------------- Footer | End ---------------------------------------------------------------------->
 
+    </div>
+    <!-------------- Main container | end ------------------------------------------------------------------------------------>
+
+    <!-------------- Sound place holder -------------------->
     <audio id="stomp">
         <source src="assets/sound/stomp-1_short.mp3" type="audio/mp3">
     </audio>
 
+    <!-------------- Container for small screens to select game mode and choose the tutorial | Start --------------------------->
     <div class="modal fade" id="mode-tutorial" tabindex="-1" aria-labelledby="mode-tutorial-Label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -133,10 +179,12 @@
                 </div>
                 <div class="modal-body">
                     <div class="row my-row">
+                        <!-------------- Tutorial Button -------------------->
                         <div class="col my-col d-flex justify-content-center align-items-center model-buttons"><span><i
                                     id="small-turorial-icon" class="far fa-question-circle" data-bs-toggle="modal"
                                     data-bs-target="#big-mode-tutorial" data-bs-dismiss="modal"></i></span>
                         </div>
+                        <!-------------- Mode Button -------------------->
                         <div class="col d-flex justify-content-center align-items-center model-buttons my-col">
                             <button id="small-mode-button" class="mode-btn" data-bs-dismiss="modal">Classic</button>
                         </div>
@@ -148,7 +196,9 @@
             </div>
         </div>
     </div>
+    <!-------------- Container for small screens to select game mode and choose the tutorial | END ----------------------------->
 
+    <!-------------- Tutorial instruction container | Start -------------------------------------------------------------------->
     <div class="modal fade" id="big-mode-tutorial" tabindex="-1" aria-labelledby="big-mode-tutorial-Label"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -169,8 +219,7 @@
                         <li><button class="tutorial-btns hs">High Score</button> - Button on the right side of the
                             screen shows your
                             high score on click shows top 5 highs scores made.</li>
-                        <li><button
-                                class="tutorial-start"></button> -
+                        <li><button class="tutorial-start"></button> -
                             Click this button to start the game. On click you
                             will start to see your current score and the color pattern will start.</li>
                         <li>The color will blink in a pattern. You must repeat the pattern witch will get longer and
@@ -185,7 +234,9 @@
             </div>
         </div>
     </div>
+    <!-------------- Tutorial instruction container | End ---------------------------------------------------------------------->
 
+    <!-------------- High score board container | Start ------------------------------------------------------------------------>
     <div class="modal fade" id="hoghscore-bord" tabindex="-1" aria-labelledby="hoghscore-bord-Label" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered modal-xl">
             <div class="modal-content">
@@ -195,6 +246,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
+
+                        <!-------------- Classic high score -------------------->
                         <div class="col">
                             <h3>Classic</h3>
                             <table class="table">
@@ -234,6 +287,8 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <!-------------- Extreme high score -------------------->
                         <div class="col">
                             <h3>Extreme</h3>
                             <table class="table">
@@ -281,7 +336,9 @@
             </div>
         </div>
     </div>
+    <!-------------- High score board container | End ------------------------------------------------------------------------>
 
+    <!-------------- Feed back form | Start ---------------------------------------------------------------------------------->
     <div class="modal fade" id="feedback" tabindex="-1" aria-labelledby="feedback-Label" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered modal-xl">
             <div class="modal-content">
@@ -293,12 +350,20 @@
                     <div class="row-fluid">
                         <div class="col d-flex justify-content-center">
                             <form class="feedback-form-input" onsubmit="return sendMail(this);">
+
+                                <!-- Name area -->
                                 <input type="text" name="name" id="name" class="feedback-form-input" placeholder="Name"
                                     required /><br>
+
+                                <!-- Email area -->
                                 <input type="text" name="emailaddress" id="email" class="feedback-form-input"
                                     placeholder="Email" required /><br>
+
+                                <!-- Text area -->
                                 <textarea rows="5" name="feedback" id="feedback-text" class="feedback-form-input"
                                     placeholder="Right your feedback here..." required></textarea><br>
+
+                                <!-- Send button -->
                                 <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Send
                                     Feedback</button>
                             </form>
@@ -311,6 +376,9 @@
             </div>
         </div>
     </div>
+    <!-------------- Feed back form | End ------------------------------------------------------------------------------------>
+
+    <!-- Link to script for feed back function -->
     <script src="assets/js/sendEmail.js"></script>
 </body>
 
