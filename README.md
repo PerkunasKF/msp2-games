@@ -91,7 +91,7 @@ The website needs to enable the **user** to:
 
 With these goals in mind, a strategy table was created:
 
-![Strategy Table] Strategijos lentele
+![Strategy Table](assets/img/assestment.png)
 
 <strong>2. <u>Scope</u></strong>
 
