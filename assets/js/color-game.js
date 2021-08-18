@@ -14,6 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function startClick() {
+    document.getElementById('current-score-big').style.fontSize = '36px';
+    document.getElementById('current-score-big').style.color = 'black';
+    document.getElementById('current-score-big').innerHTML = 'START';
+
+    document.getElementById('small-current-score').style.fontSize = '16px';
+    document.getElementById('small-current-score').style.color = 'black';
+    document.getElementById('small-current-score').innerHTML = 'START';
+
     cycle = 0;
     cycleMemmory = [];
     gameOwer = 0;
@@ -23,11 +31,17 @@ function startClick() {
         disableStart();
         startGame();
         document.getElementById('current-score-big').innerHTML = '0';
+        document.getElementById('small-current-score').innerHTML = '0';
+        document.getElementById('current-score-big').style.fontSize = '';
+        document.getElementById('small-current-score').style.fontSize = '';
     });
     $('#small-start-button').off().on('click', function () {
         disableStart();
         startGame();
         document.getElementById('current-score-big').innerHTML = '0';
+        document.getElementById('small-current-score').innerHTML = '0';
+        document.getElementById('current-score-big').style.fontSize = '';
+        document.getElementById('small-current-score').style.fontSize = '';
     });
 }
 
@@ -36,8 +50,9 @@ function resetGame() {
         cycle = 0;
         cycleMemmory = [];
         gameOwer = 0;
+        document.getElementById('current-score-big').innerHTML = 'START';
+        document.getElementById('small-current-score').innerHTML = 'START';
         startClick();
-        document.getElementById('current-score-big').innerHTML = '';
     });
 }
 

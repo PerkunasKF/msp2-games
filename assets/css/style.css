@@ -94,7 +94,7 @@ td {
 /*-------------------------------------------------------------*/
 
 .startButton {
-    background-color: orange;
+    background-color: rgb(135, 206, 22);
 
     width: 150px;
     height: 150px;
@@ -232,32 +232,6 @@ td {
 }
 
 /*-------------------------------------------------------------*/
-/*                        Animations                           */
-/*-------------------------------------------------------------*/
-
-#blink-start {
-    background-color: rgb(76, 175, 214);
-
-    display: inline-block;
-    border: 3px solid #fff;
-    border-radius: 50%;
-
-    position: relative;
-    height: 50px;
-    width: 50px;
-    right: -43.7%;
-    z-index: 600;
-    top: -120.5%;
-}
-
-@media screen and (max-width: 600px) {
-    #blink-start {
-        right: -1.3%;
-        top: -140%;
-    }
-}
-
-/*-------------------------------------------------------------*/
 /*                    Small screens                            */
 /*-------------------------------------------------------------*/
 
@@ -331,7 +305,6 @@ td {
     }
 
     .startButton {
-        background-color: orange;
 
         width: 95px;
         height: 95px;
@@ -514,7 +487,6 @@ td {
     }
 
     .startButton {
-        background-color: orange;
 
         width: 75px;
         height: 75px;
