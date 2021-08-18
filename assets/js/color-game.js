@@ -15,11 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function startClick() {
     document.getElementById('current-score-big').style.fontSize = '36px';
-    document.getElementById('current-score-big').style.color = 'black';
     document.getElementById('current-score-big').innerHTML = 'START';
 
     document.getElementById('small-current-score').style.fontSize = '16px';
-    document.getElementById('small-current-score').style.color = 'black';
     document.getElementById('small-current-score').innerHTML = 'START';
 
     cycle = 0;
@@ -452,10 +450,10 @@ function highscoreCheck() {
             localStorage.setItem('classickNr2Score', classicScores[0]);
             localStorage.setItem('classickNr1Score', scoreBg);
 
-            localStorage.setItem('classickNr5Name', claName[3]);
-            localStorage.setItem('classickNr4Name', claName[2]);
-            localStorage.setItem('classickNr3Name', claName[1]);
-            localStorage.setItem('classickNr2Name', claName[0]);
+            localStorage.setItem('classickNr5Name', claName[4]);
+            localStorage.setItem('classickNr4Name', claName[3]);
+            localStorage.setItem('classickNr3Name', claName[2]);
+            localStorage.setItem('classickNr2Name', claName[1]);
 
             let person = prompt('You got a highscore. Enter your name', 'Anonimus');
             if (person == null || person == "") {
@@ -480,9 +478,9 @@ function highscoreCheck() {
             localStorage.setItem('classickNr3Score', classicScores[1]);
             localStorage.setItem('classickNr2Score', scoreBg);
 
-            localStorage.setItem('classickNr5Name', claName[3]);
-            localStorage.setItem('classickNr4Name', claName[2]);
-            localStorage.setItem('classickNr3Name', claName[1]);
+            localStorage.setItem('classickNr5Name', claName[4]);
+            localStorage.setItem('classickNr4Name', claName[3]);
+            localStorage.setItem('classickNr3Name', claName[2]);
 
             let person = prompt('You got a highscore. Enter your name', 'Anonimus');
             if (person == null || person == "") {
@@ -505,8 +503,8 @@ function highscoreCheck() {
                 localStorage.setItem('classickNr4Score', classicScores[2]);
                 localStorage.setItem('classickNr3Score', scoreBg);
 
-                localStorage.setItem('classickNr5Name', claName[3]);
-                localStorage.setItem('classickNr4Name', claName[2]);
+                localStorage.setItem('classickNr5Name', claName[4]);
+                localStorage.setItem('classickNr4Name', claName[3]);
 
                 let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                 if (person == null || person == "") {
@@ -526,7 +524,7 @@ function highscoreCheck() {
                     localStorage.setItem('classickNr5Score', classicScores[3]);
                     localStorage.setItem('classickNr4Score', scoreBg);
 
-                    localStorage.setItem('classickNr5Name', claName[3]);
+                    localStorage.setItem('classickNr5Name', claName[4]);
 
                     let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                     if (person == null || person == "") {
@@ -588,10 +586,10 @@ function highscoreCheck() {
             localStorage.setItem('extriemNr2Score', extriemScores[0]);
             localStorage.setItem('extriemNr1Score', scoreBg);
 
-            localStorage.setItem('extriemNr5Name', claName[3]);
-            localStorage.setItem('extriemNr4Name', claName[2]);
-            localStorage.setItem('extriemNr3Name', claName[1]);
-            localStorage.setItem('extriemNr2Name', claName[0]);
+            localStorage.setItem('extriemNr5Name', claName[4]);
+            localStorage.setItem('extriemNr4Name', claName[3]);
+            localStorage.setItem('extriemNr3Name', claName[2]);
+            localStorage.setItem('extriemNr2Name', claName[1]);
 
             let person = prompt('You got a highscore. Enter your name', 'Anonimus');
             if (person == null || person == "") {
@@ -616,9 +614,9 @@ function highscoreCheck() {
             localStorage.setItem('extriemNr3Score', extriemScores[1]);
             localStorage.setItem('extriemNr2Score', scoreBg);
 
-            localStorage.setItem('extriemNr5Name', extName[3]);
-            localStorage.setItem('extriemNr4Name', extName[2]);
-            localStorage.setItem('extriemNr3Name', extName[1]);
+            localStorage.setItem('extriemNr5Name', claName[4]);
+            localStorage.setItem('extriemNr4Name', claName[3]);
+            localStorage.setItem('extriemNr3Name', claName[2]);
 
             let person = prompt('You got a highscore. Enter your name', 'Anonimus');
             if (person == null || person == "") {
@@ -641,8 +639,8 @@ function highscoreCheck() {
                 localStorage.setItem('extriemNr4Score', extriemScores[2]);
                 localStorage.setItem('extriemNr3Score', scoreBg);
 
-                localStorage.setItem('extriemNr5Name', extName[3]);
-                localStorage.setItem('extriemNr4Name', extName[2]);
+                localStorage.setItem('extriemNr5Name', claName[4]);
+                localStorage.setItem('extriemNr4Name', claName[3]);
 
                 let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                 if (person == null || person == "") {
@@ -662,7 +660,7 @@ function highscoreCheck() {
                     localStorage.setItem('extriemNr5Score', extriemScores[3]);
                     localStorage.setItem('extriemNr4Score', scoreBg);
 
-                    localStorage.setItem('extriemNr5Name', extName[3]);
+                    localStorage.setItem('extriemNr5Name', claName[4]);
 
                     let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                     if (person == null || person == "") {
