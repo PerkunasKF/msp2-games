@@ -83,3 +83,9 @@
     ![High Score Board](assets/gif/feddback-form.gif)
 
 [Back to top ⇧](#table-of-contents)
+
+## Automated Testing
+
+### Code Validation
+
+#### [W3C Markup Validator](https://validator.w3.org/ "Link to W3C Markup Validator") was used to validate the `HTML` code used:
