@@ -52,3 +52,34 @@
 
 [Back to top ⇧](#table-of-contents)
 
+## Manual Testing
+
+- Clicking the hovering over interactive elements will change the cursor and the button styles:
+
+    ![Hovering over the elements](assets/gif/mouse-over-change.gif)
+
+- Clicking the **Reset Button** will reset current game: 
+
+    ![Clicking Reset Button](assets/gif/reset-function.gif)
+
+- Clicking **Tutorial Button** will pop up tutorial explanations:
+
+    ![Clicking Tutorial Button](assets/gif/tutorial-pop-up.gif)
+
+- Playing on a classic mode game will show the same pattern and will make it longer:
+
+    ![Classic Game Mode](assets/gif/classic-mode.gif)
+    
+- Playing on extreme mode game patter will be random and will keep getting longer:
+
+    ![Extreme Game Mode](assets/gif/extreme-mode.gif)
+    
+- Clicking on **High Score Button** will make a high score board to pop up:
+
+    ![High Score Board](assets/gif/high-score-board.gif)
+    
+- Clicking on **Feedback Button** will make feedback form to pop up:
+
+    ![High Score Board](assets/gif/feddback-form.gif)
+
+[Back to top ⇧](#table-of-contents)
