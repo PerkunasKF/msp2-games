@@ -86,6 +86,8 @@ function resetGame() {
 //--------------------------------------------------------------------------------------\\
 // Button disable and enable functions
 // Disables start buttons for big and small screens
+// This code egzample was use from 
+// https://stackoverflow.com/questions/11737512/document-getelementbyidbtnid-disabled-is-not-working-in-firefox-and-chrome
 
 function disableStart() {
     document.getElementById('start-button').style.backgroundColor = 'white';
@@ -98,6 +100,8 @@ function disableStart() {
 }
 
 // Enable start buttons for big and small screens
+// This code egzample was use from 
+// https://stackoverflow.com/questions/11737512/document-getelementbyidbtnid-disabled-is-not-working-in-firefox-and-chrome
 
 function enableStart() {
     document.getElementById('start-button').style.backgroundColor = '';
@@ -440,6 +444,8 @@ function modeSwich() {
 // Saves best 5 scores for eache mode in local storege
 // Also saves user names
 // Classic and extreme modes are loge separatly
+// The local storag code egzample was coppyed from
+// https://www.w3schools.com/jsref/prop_win_localstorage.asp
 
 function highscoreCheck() {
     let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
@@ -480,6 +486,7 @@ function highscoreCheck() {
             localStorage.setItem('classickNr3Name', claName[2]);
             localStorage.setItem('classickNr2Name', claName[1]);
 
+            // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
             let person = prompt('You got a highscore. Enter your name', 'Anonimus');
             if (person == null || person == "") {
                 clasickName[0].innerHTML = 'Anonimus';
@@ -507,6 +514,7 @@ function highscoreCheck() {
             localStorage.setItem('classickNr4Name', claName[3]);
             localStorage.setItem('classickNr3Name', claName[2]);
 
+            // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
             let person = prompt('You got a highscore. Enter your name', 'Anonimus');
             if (person == null || person == "") {
                 clasickName[1].innerHTML = 'Anonimus';
@@ -531,6 +539,7 @@ function highscoreCheck() {
                 localStorage.setItem('classickNr5Name', claName[4]);
                 localStorage.setItem('classickNr4Name', claName[3]);
 
+                // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
                 let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                 if (person == null || person == "") {
                     clasickName[2].innerHTML = 'Anonimus';
@@ -551,6 +560,7 @@ function highscoreCheck() {
 
                     localStorage.setItem('classickNr5Name', claName[4]);
 
+                    // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
                     let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                     if (person == null || person == "") {
                         clasickName[3].innerHTML = 'Anonimus';
@@ -565,6 +575,7 @@ function highscoreCheck() {
 
                         localStorage.setItem('classickNr5Score', scoreBg);
 
+                        // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
                         let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                         if (person == null || person == "") {
                             clasickName[4].innerHTML = 'Anonimus';
@@ -578,6 +589,7 @@ function highscoreCheck() {
             }
         }
     }
+
 
     let extName = [];
     let extriemName = document.getElementsByClassName('highscore-extriem-name');
@@ -615,6 +627,7 @@ function highscoreCheck() {
             localStorage.setItem('extriemNr3Name', claName[2]);
             localStorage.setItem('extriemNr2Name', claName[1]);
 
+            // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
             let person = prompt('You got a highscore. Enter your name', 'Anonimus');
             if (person == null || person == "") {
                 extriemName[0].innerHTML = 'Anonimus';
@@ -642,6 +655,7 @@ function highscoreCheck() {
             localStorage.setItem('extriemNr4Name', claName[3]);
             localStorage.setItem('extriemNr3Name', claName[2]);
 
+            // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
             let person = prompt('You got a highscore. Enter your name', 'Anonimus');
             if (person == null || person == "") {
                 extriemName[1].innerHTML = 'Anonimus';
@@ -666,6 +680,7 @@ function highscoreCheck() {
                 localStorage.setItem('extriemNr5Name', claName[4]);
                 localStorage.setItem('extriemNr4Name', claName[3]);
 
+                // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
                 let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                 if (person == null || person == "") {
                     extriemName[2].innerHTML = 'Anonimus';
@@ -686,6 +701,7 @@ function highscoreCheck() {
 
                     localStorage.setItem('extriemNr5Name', claName[4]);
 
+                    // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
                     let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                     if (person == null || person == "") {
                         extriemName[3].innerHTML = 'Anonimus';
@@ -700,6 +716,7 @@ function highscoreCheck() {
 
                         localStorage.setItem('extriemNr5Score', scoreBg);
 
+                        // This code egzaple was use from https://www.w3schools.com/js/js_popup.asp
                         let person = prompt('You got a highscore. Enter your name', 'Anonimus');
                         if (person == null || person == "") {
                             extriemName[4].innerHTML = 'Anonimus';
