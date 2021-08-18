@@ -110,3 +110,22 @@
 - The warrning for `color-game.js` :
 
     ![Warning declared in JSHint](assets/validation/js-warning.png)
+    
+### Lighthouse Auditing
+
+![Lighthous Validation](assets/validation/lighthouse.png)
+
+[Back to top ⇧](#table-of-contents)
+
+## User testing 
+Family members and friends were asked to review the site and documentation to point out any bugs and/or user experience issues. 
+
+It was through this testing that the following changes were made:
+- Added extreme mode.
+- The sound was added to the color blinks.
+- Graphic design was remade.
+- More clearly defined modes and buttons.
+
+[Back to top ⇧](#table-of-contents)
+
+***
