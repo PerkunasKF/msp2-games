@@ -33,7 +33,7 @@
      2. [Code](#Code)
 ***
 
-![Blank! Responsiveness]responsivnes mock up image
+![Blank! Responsiveness](assets/img/am-i-resposive.png)
 
 ***
 
