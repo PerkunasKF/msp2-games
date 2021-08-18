@@ -89,3 +89,24 @@
 ### Code Validation
 
 #### [W3C Markup Validator](https://validator.w3.org/ "Link to W3C Markup Validator") was used to validate the `HTML` code used:
+
+**Result:**
+
+![Page HTML Validation Results](assets/validation/HTML-validation.png)
+
+#### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/ "Link to W3C CSS Validator") was used to validate the `CSS` code used:
+
+**Result:**
+
+![CSS Validation Results](assets/validation/CSS-validation.png)
+
+#### [JSHint](https://jshint.com/ "Link to JSHint") was used to validate the `JavaScript` and `JQuery` code used:
+
+**Results:**
+
+- There were no errors for:
+    - `sendEmail.js`
+
+- The warrning for `color-game.js` :
+
+    ![Warning declared in JSHint](assets/validation/js-warning.png)
