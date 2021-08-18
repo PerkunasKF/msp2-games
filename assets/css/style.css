@@ -79,6 +79,8 @@ td {
     color: #000;
 
     margin-top: 35px;
+
+    cursor: pointer;
 }
 
 .main-modes-icons:hover {
@@ -124,6 +126,8 @@ td {
     height: 210px;
 
     border: solid black;
+
+    cursor: pointer;
 }
 
 .color-btn {
