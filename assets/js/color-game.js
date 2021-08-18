@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 //--------------------------------------------------------------------------------------\\
 // Globar values used by multiple functions
 
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     highscoreBoardLoad();
     resetGame();
     modeSwich();
-})
+});
 
 //--------------------------------------------------------------------------------------\\
 
@@ -653,7 +654,7 @@ function highscoreCheck() {
             if (scoreBg > extriemScores[2]) {
                 extriemHighscore[4].innerHTML = extriemScores[3];
                 extriemHighscore[3].innerHTML = extriemScores[2];
-                clasickextriemHighscoreHighscore[2].innerHTML = scoreBg;
+                extriemHighscore[2].innerHTML = scoreBg;
 
                 extriemName[4].innerHTML = extName[4];
                 extriemName[3].innerHTML = extName[2];
@@ -737,7 +738,7 @@ function highscoreBoardLoad() {
     let clasickName = document.getElementsByClassName('highscore-classic-name');
     let clasickHighscore = document.getElementsByClassName('highscore-classic-score');
 
-    if (classicResult1Name != '-' || clasicResult1Name != 'undefined') {
+    if (classicResult1Name != '-' || classicResult1Name != 'undefined') {
         clasickName[0].innerHTML = classicResult1Name;
         clasickHighscore[0].innerHTML = classicResult1Score;
     }
