@@ -114,7 +114,7 @@ A scope was defined to clearly identify what needed to be done to align features
 
 The entire game was fitted in one page for ease of use and all information is easily reached true the main page. The **hierarchial tree structure**:
 
-![Site Map] Prideti informacijos medi
+![Site Map](assets/img/threa.png)
 
 <strong>4. <u>Skeleton</u></strong>
 
