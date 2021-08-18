@@ -5,6 +5,8 @@ var cycle = 0;
 var cycleMemmory = [];
 var gameOwer = 0;
 var classic = true;
+var reset = false;
+var mode = false;
 
 //--------------------------------------------------------------------------------------\\
 
@@ -13,11 +15,10 @@ var classic = true;
 // Waiting for all DOM content to load to star using game functions
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Pakrautas');
     startClick();
-    modeSwich();
     highscoreBoardLoad();
     resetGame();
+    modeSwich();
 })
 
 //--------------------------------------------------------------------------------------\\
@@ -43,6 +44,7 @@ function startClick() {
     $('#start-button').off().on('click', function () {
         disableStart();
         startGame();
+        mode = false;
         document.getElementById('current-score-big').innerHTML = '0';
         document.getElementById('small-current-score').innerHTML = '0';
         document.getElementById('current-score-big').style.fontSize = '';
@@ -51,6 +53,7 @@ function startClick() {
     $('#small-start-button').off().on('click', function () {
         disableStart();
         startGame();
+        mode = false;
         document.getElementById('current-score-big').innerHTML = '0';
         document.getElementById('small-current-score').innerHTML = '0';
         document.getElementById('current-score-big').style.fontSize = '';
@@ -69,6 +72,7 @@ function resetGame() {
         cycle = 0;
         cycleMemmory = [];
         gameOwer = 0;
+        reset = false;
         document.getElementById('current-score-big').innerHTML = 'START';
         document.getElementById('small-current-score').innerHTML = 'START';
         startClick();
@@ -143,7 +147,6 @@ function enableColors() {
 
 function startGame() {
     let randomNum = 0;
-    console.log(classic);
 
     if (gameOwer == 0) {
         if (classic == true) {
@@ -235,7 +238,14 @@ function colorClickBlink() {
     let click = 0;
     let colorPattern = [];
 
-    enableColors();
+    if (mode == false) {
+        enableColors();
+    }
+
+    if (mode == true) {
+        cycle = 0;
+        cycleMemmory = [];
+    }
 
     $('#red-button').off().on('click', function () {
         document.getElementById('red-button').style.backgroundColor = '#ff2b1c';
@@ -393,18 +403,22 @@ function currentScore() {
 function modeSwich() {
 
     document.getElementById('mode-button').addEventListener('click', function () {
+        mode = true;
         if (classic == true) {
             document.getElementById('mode-button').innerHTML = 'Extriem';
             classic = false;
             startClick();
+            resetGame();
         } else {
             document.getElementById('mode-button').innerHTML = 'Classic';
             classic = true;
             startClick();
+            resetGame();
         }
     });
 
     document.getElementById('small-mode-button').addEventListener('click', function () {
+        mode = true;
         if (classic == true) {
             document.getElementById('small-mode-button').innerHTML = 'Extriem';
             classic = false;
@@ -428,13 +442,11 @@ function modeSwich() {
 
 function highscoreCheck() {
     let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
-    console.log(scoreBg);
 
     let claName = [];
     let clasickName = document.getElementsByClassName('highscore-classic-name');
     for (let i = 0; i < clasickName.length; i++) {
         claName.push(clasickName[i].innerHTML);
-        console.log(claName[i]);
     }
 
     let classicScores = [];
@@ -570,7 +582,6 @@ function highscoreCheck() {
     let extriemName = document.getElementsByClassName('highscore-extriem-name');
     for (let i = 0; i < extriemName.length; i++) {
         extName.push(extriemName[i].innerHTML);
-        console.log(extName[i]);
     }
 
     let extriemScores = [];
