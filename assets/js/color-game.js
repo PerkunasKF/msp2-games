@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startClick();
     modeSwich();
     highscoreBoardLoad();
+    resetGame();
 })
 
 function startClick() {
@@ -27,6 +28,16 @@ function startClick() {
         disableStart();
         startGame();
         document.getElementById('current-score-big').innerHTML = '0';
+    });
+}
+
+function resetGame() {
+    $('#reset-button').off().on('click', function () {
+        cycle = 0;
+        cycleMemmory = [];
+        gameOwer = 0;
+        startClick();
+        document.getElementById('current-score-big').innerHTML = '';
     });
 }
 
@@ -748,9 +759,10 @@ function sendMail(feedbackForm) {
         'from_email': feedbackForm.emailaddress.value,
         'message': feedbackForm.feedback.value
     }).then(
-        function(response){
+        function (response) {
             alert('Message send', response);
-        }, function(error) {
+        },
+        function (error) {
             alert('Something whent wrong...', error);
         }
     );
