@@ -1,5 +1,5 @@
 <h1 align="center">
-  Simon Says Solor Game
+  Simon Says Color Game
 </h1>
   
 <h2 align="center">
