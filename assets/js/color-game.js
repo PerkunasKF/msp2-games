@@ -326,7 +326,7 @@ function patternCheck(valueCheck, click) {
             }, 1000);
         }
     } else {
-        highScore();
+        //highScore();
         highscoreCheck();
         disableColors();
         gameOwer = 1;
@@ -355,7 +355,7 @@ function currentScore() {
 
 // Function to log highes score made
 
-function highScore() {
+/*function highScore() {
     let scoreBg = parseInt(document.getElementById('current-score-big').innerHTML);
     let highscoreBg = parseInt(document.getElementById('high-score-big').innerHTML);
     if (highscoreBg < scoreBg) {
@@ -367,7 +367,7 @@ function highScore() {
         document.getElementById('small-high-score').innerHTML = scoreBg;
     }
     console.log(highscoreSm);
-}
+}*/
 
 function modeSwich() {
 

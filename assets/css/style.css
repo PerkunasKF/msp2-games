@@ -198,6 +198,10 @@ td {
     height: 300px;
 }
 
+#high-score-big {
+    font-size: 40px;
+}
+
 /*-------------------------------------------------------------*/
 /*                        Footer                               */
 /*-------------------------------------------------------------*/
@@ -273,6 +277,10 @@ td {
 
         font-size: 100px;
         color: #000;
+    }
+
+    #high-score-big {
+        font-size: 36px;
     }
 }
 
@@ -439,7 +447,7 @@ td {
 
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 38px;
+    font-size: 26px;
     color: rgb(174, 168, 168);
 }
 
@@ -500,7 +508,9 @@ td {
         width: 90px;
         height: 45px;
 
-        font-size: 28px;
+        font-size: 12px;
+
+        margin-bottom: 50px;
     }
 
     .startButton {
