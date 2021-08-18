@@ -1,5 +1,5 @@
 <h1 align="center">
-  Simon Says Solor Game
+  Simon Says Color Game
 </h1>
 
 <h1 align="center"> Testing </h1>
@@ -19,5 +19,9 @@
      - [Browser Validation](#Browser-Validation)
      - [Lighthouse Auditing](#Lighthouse-Auditing)
 4. [User Testing](#User-Testing)
+
+***
+
+![Blank! Responsiveness](assets/img/am-i-resposive.png)
 
 ***
