@@ -127,11 +127,22 @@ Wireframe mockup was created in a [Figma Workspace](https://www.figma.com/file/v
 ## Features
 All features are responsive and intuitive:
 - **Reset** - On the top left corner there is an icon witch will reset the game any time the player wishes.
-- **Tutorial** - On the top right corner there is an icon witch will open tutorial container with the game instructions and other game features.
-- **Start/Score/Game Over** - In the middle of the screen there is the game area with four colors and the start, start button changes into the current score holder after the game starts. And changes into the game over indicator after the player make a mistake.
+- **Tutorial** - On the top right corner there is an icon witch will open tutorial container with the game instructions:
+     - On small screens it will open the tutorial icon and a game mode change button.
+- **Start/Score/Game Over** - In the middle of the screen there is the game area with four colors and the start button:  
+     - Start button changes into the current score holder after the game starts.
+     - Start button changes into game over indicator after the player makes a mistake.
 - **Classic/Extreme** - On the left side of the screen there is a mode button after click the game mode changes from classic to extreme.
-- **High score** - On the right side of the screen there is a better high score achieved indicator also functions as a button to open high score board.
+     - Classic mode features same extending color pattern after players correct answer.
+     - Extreme mode features new extending color pattern after players correct answer.
+- **High score** - On the right side of the screen there button to open high score board.
+     - High scores board features classic game high score and extreme high score sections.
+     - Names and score are saved in local storage.
 - **Feedback** - On the bottom left corner there is and icon which will open feedback forum after clicking it.
+     - Name area requires input or send feedback.
+     - Email area requires an email to be input to send feedback.
+     - Text area requires a message to be written to send feedback.
+     - Feedback is sent to developer and user get an email with "Thank you for your feedback" message.
 
 [Back to top ⇧](#table-of-contents)
 
