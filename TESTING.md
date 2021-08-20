@@ -22,7 +22,7 @@
 
 ***
 
-![Blank! Responsiveness](assets/img/am-i-resposive.png)
+![Blank! Responsiveness](assets/img/am-i-resposive-2.png)
 
 ***
 ## Testing User Stories

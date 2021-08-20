@@ -33,7 +33,7 @@
      2. [Code](#Code)
 ***
 
-![Blank! Responsiveness](assets/img/am-i-resposive.png)
+![Blank! Responsiveness](assets/img/am-i-resposive-2.png)
 
 ***
 
