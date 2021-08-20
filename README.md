@@ -39,7 +39,7 @@
 
 ## UX 
 ### Project Goals
-The primary goal of "Simon Says Color Game" is to provide a web-based interactive game that is entertaining and usis the original "Simon (game)" made by: Ralph H. Baer and Howard J. Morrison. Gamme is designe to test and train players memmory skills.
+The primary goal of "Simon Says Color Game" is to provide a web-based interactive game that is entertaining and usis the original "Simon (game)" made by: Ralph H. Baer and Howard J. Morrison. Game is designed to test and train players memmory skills.
 
 This is the second of four Milestone Projects that the developer must complete during their Full Stack Web Development Program at The Code Institute. 
 
@@ -189,10 +189,6 @@ Testing information can be found in a separate testing [file] Prideti testing fi
 ## Deployment
 
 This project was developed using [Visual GitHub](https://github.com/ "Link to GitHub site").
-
-## Deployment
-
-This project was developed using [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/ "Link to Visual Studio Code site"), committed to git and pushed to GitHub using the computer terminal.
 
 ### Deploying on GitHub Pages
 To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken:
