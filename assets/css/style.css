@@ -48,7 +48,7 @@ td {
 /*---------------------------------------------------------------------------------------------------------------------*/
 
 #main-modes {
-    background-color: orange;
+    background-color: rgb(216, 162, 46);
     height: 225px;
 
     border: 15px solid #000;
@@ -180,7 +180,7 @@ td {
 .btns:hover {
     border: 5px solid #000;
 
-    background-color: #e0a224;
+    background-color: #fff;
     color: #000;
 }
 
@@ -199,7 +199,7 @@ td {
 /*---------------------------------------------------------------------------------------------------------------------*/
 
 #footer {
-    background-color: orange;
+    background-color: rgb(216, 162, 46);
     height: 200px;
 
     border: 15px solid #000;
@@ -422,6 +422,13 @@ td {
     font-weight: 500;
     font-size: 26px;
     color: rgb(174, 168, 168);
+}
+
+#small-high-score-button:hover {
+    border: 5px solid #000;
+
+    background-color: #fff;
+    color: #000;
 }
 
 @media screen and (max-width: 750px) {
