@@ -56,31 +56,31 @@
 
 - Clicking the hovering over interactive elements will change the cursor and the button styles:
 
-    ![Hovering over the elements](assets/gif/mouse-over-change.gif)
+    ![Hovering over the elements](assets/gif/cursor-change-2.gif)
 
 - Clicking the **Reset Button** will reset current game: 
 
-    ![Clicking Reset Button](assets/gif/reset-function.gif)
+    ![Clicking Reset Button](assets/gif/reset-game-2.gif)
 
 - Clicking **Tutorial Button** will pop up tutorial explanations:
 
-    ![Clicking Tutorial Button](assets/gif/tutorial-pop-up.gif)
+    ![Clicking Tutorial Button](assets/gif/tutorial-2.gif)
 
 - Playing on a classic mode game will show the same pattern and will make it longer:
 
-    ![Classic Game Mode](assets/gif/classic-mode.gif)
+    ![Classic Game Mode](assets/gif/classic-2.gif)
     
 - Playing on extreme mode game patter will be random and will keep getting longer:
 
-    ![Extreme Game Mode](assets/gif/extreme-mode.gif)
+    ![Extreme Game Mode](assets/gif/extreme-2.gif)
     
 - Clicking on **High Score Button** will make a high score board to pop up:
 
-    ![High Score Board](assets/gif/high-score-board.gif)
+    ![High Score Board](assets/gif/high-score-2.gif)
     
 - Clicking on **Feedback Button** will make feedback form to pop up:
 
-    ![High Score Board](assets/gif/feddback-form.gif)
+    ![High Score Board](assets/gif/feedback-2.gif)
 
 [Back to top ⇧](#table-of-contents)
 
@@ -118,7 +118,7 @@
 [Back to top ⇧](#table-of-contents)
 
 ## User testing 
-Family members and friends were asked to review the site and documentation to point out any bugs and/or user experience issues. 
+Family members and friends, also mentor, Seun Owonikoko, were asked to review the site and documentation to point out any bugs and/or user experience issues. 
 
 It was through this testing that the following changes were made:
 - Added extreme mode.
