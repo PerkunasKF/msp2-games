@@ -410,7 +410,7 @@ function modeSwich() {
     document.getElementById('mode-button').addEventListener('click', function () {
         mode = true;
         if (classic == true) {
-            document.getElementById('mode-button').innerHTML = 'Extriem';
+            document.getElementById('mode-button').innerHTML = 'Extreme';
             classic = false;
             startClick();
             resetGame();
@@ -425,7 +425,7 @@ function modeSwich() {
     document.getElementById('small-mode-button').addEventListener('click', function () {
         mode = true;
         if (classic == true) {
-            document.getElementById('small-mode-button').innerHTML = 'Extriem';
+            document.getElementById('small-mode-button').innerHTML = 'Extreme';
             classic = false;
             startClick();
         } else {
